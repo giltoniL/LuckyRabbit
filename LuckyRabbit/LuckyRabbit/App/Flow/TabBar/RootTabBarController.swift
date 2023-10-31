@@ -11,12 +11,16 @@ class RootTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tabBar.barTintColor = UIColor.red
+        
         UITabBar.appearance().unselectedItemTintColor = .white
         UITabBar.appearance().tintColor = .yellow
         
         
         let bonusVC = BonusVC()
         buildConfig(bonusVC, title: "Bonus")
+        
         
         let coctailsVC = CoctailsVC()
         buildConfig(coctailsVC, title: "Coctails")

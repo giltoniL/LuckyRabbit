@@ -1,0 +1,44 @@
+
+[{
+        "id": "b195de8a-58ef-4ca4-aa76-7032ec28c078",
+        "imageCoctail": "coctailOneImg",
+        "title": "One_Coctail",
+        "volume": "120$",
+        "credits": "300",
+        "imageIcon": "icon_score",
+        "score": "100",
+        "ingredients": "1,2,3"
+    },
+    {
+        "id": "3519edc3-b611-47fc-b5db-488f773b0bb1",
+        "imageCoctail": "coctailTwoImg",
+        "title": "Orage grape",
+        "volume": "110$",
+        "credits": "255",
+        "imageIcon": "icon_score",
+        "score": "100",
+        "ingredients": "2,3,1"
+    },
+    {
+        "id": "08a00896-16b4-4a80-a757-8bda1dbb55ae",
+        "imageCoctail": "coctailThreeImg",
+        "title": "Blu Laguna",
+        "volume": "150$",
+        "credits": "180",
+        "imageIcon": "icon_score",
+        "score": "100",
+        "ingredients": "2,5,3"
+        
+    },
+    {
+        "id": "bb46d4cc-ef06-48d7-aa2c-ed5d939cb4b7",
+        "imageCoctail": "coctailFourImg",
+        "title": "Coctail",
+        "volume": "90$",
+        "credits": "150",
+        "imageIcon": "icon_score",
+        "score": "100",
+        "ingredients": "3,2,4"
+    }
+]
+

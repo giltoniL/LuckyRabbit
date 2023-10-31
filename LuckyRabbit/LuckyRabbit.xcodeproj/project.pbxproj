@@ -26,6 +26,22 @@
 		18222F162AF05C05005C1737 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 18222F152AF05C05005C1737 /* SnapKit */; };
 		18222F1A2AF05C98005C1737 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F192AF05C98005C1737 /* Service.swift */; };
 		18222F1C2AF05CA4005C1737 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F1B2AF05CA4005C1737 /* Settings.swift */; };
+		18222F222AF11E4D005C1737 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18222F1F2AF11E4D005C1737 /* Inter-Black.ttf */; };
+		18222F232AF11E4D005C1737 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18222F202AF11E4D005C1737 /* Inter-Regular.ttf */; };
+		18222F242AF11E4D005C1737 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18222F212AF11E4D005C1737 /* Inter-Bold.ttf */; };
+		18222F262AF13067005C1737 /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F252AF13067005C1737 /* GradientLabel.swift */; };
+		18222F282AF132B2005C1737 /* CoctailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F272AF132B2005C1737 /* CoctailCell.swift */; };
+		18222F2A2AF132BE005C1737 /* CoctailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F292AF132BE005C1737 /* CoctailModel.swift */; };
+		18222F2C2AF132D0005C1737 /* dataCoctail in Resources */ = {isa = PBXBuildFile; fileRef = 18222F2B2AF132D0005C1737 /* dataCoctail */; };
+		18222F302AF133DD005C1737 /* CoctailDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F2F2AF133DD005C1737 /* CoctailDetailsVC.swift */; };
+		18222F322AF133ED005C1737 /* CoctailDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F312AF133ED005C1737 /* CoctailDetailsView.swift */; };
+		18222F342AF133FE005C1737 /* CoctailDetailsQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F332AF133FE005C1737 /* CoctailDetailsQRView.swift */; };
+		18222F362AF13407005C1737 /* CoctailDetailsQRVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F352AF13407005C1737 /* CoctailDetailsQRVC.swift */; };
+		18222F382AF1341E005C1737 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F372AF1341E005C1737 /* NewsCell.swift */; };
+		18222F3A2AF13426005C1737 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F392AF13426005C1737 /* NewsModel.swift */; };
+		18222F3C2AF13435005C1737 /* dataNews in Resources */ = {isa = PBXBuildFile; fileRef = 18222F3B2AF13435005C1737 /* dataNews */; };
+		18222F3F2AF13452005C1737 /* NewsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F3E2AF13452005C1737 /* NewsDetailsVC.swift */; };
+		18222F412AF1345C005C1737 /* NewsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F402AF1345C005C1737 /* NewsDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +65,22 @@
 		18222F122AF05BAC005C1737 /* infoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoView.swift; sourceTree = "<group>"; };
 		18222F192AF05C98005C1737 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		18222F1B2AF05CA4005C1737 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		18222F1F2AF11E4D005C1737 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		18222F202AF11E4D005C1737 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		18222F212AF11E4D005C1737 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		18222F252AF13067005C1737 /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
+		18222F272AF132B2005C1737 /* CoctailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailCell.swift; sourceTree = "<group>"; };
+		18222F292AF132BE005C1737 /* CoctailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailModel.swift; sourceTree = "<group>"; };
+		18222F2B2AF132D0005C1737 /* dataCoctail */ = {isa = PBXFileReference; lastKnownFileType = text; path = dataCoctail; sourceTree = "<group>"; };
+		18222F2F2AF133DD005C1737 /* CoctailDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailDetailsVC.swift; sourceTree = "<group>"; };
+		18222F312AF133ED005C1737 /* CoctailDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailDetailsView.swift; sourceTree = "<group>"; };
+		18222F332AF133FE005C1737 /* CoctailDetailsQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailDetailsQRView.swift; sourceTree = "<group>"; };
+		18222F352AF13407005C1737 /* CoctailDetailsQRVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailDetailsQRVC.swift; sourceTree = "<group>"; };
+		18222F372AF1341E005C1737 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		18222F392AF13426005C1737 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		18222F3B2AF13435005C1737 /* dataNews */ = {isa = PBXFileReference; lastKnownFileType = text; path = dataNews; sourceTree = "<group>"; };
+		18222F3E2AF13452005C1737 /* NewsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsVC.swift; sourceTree = "<group>"; };
+		18222F402AF1345C005C1737 /* NewsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +141,7 @@
 		18222EF62AF05765005C1737 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
+				18222F1E2AF11E12005C1737 /* Font */,
 				18222F1D2AF0E117005C1737 /* Assets */,
 			);
 			path = Resourse;
@@ -153,6 +186,10 @@
 			children = (
 				18222F042AF05B73005C1737 /* CoctailsVC.swift */,
 				18222F062AF05B7B005C1737 /* CoctailView.swift */,
+				18222F272AF132B2005C1737 /* CoctailCell.swift */,
+				18222F292AF132BE005C1737 /* CoctailModel.swift */,
+				18222F2B2AF132D0005C1737 /* dataCoctail */,
+				18222F2D2AF133AF005C1737 /* CoctailDetails */,
 			);
 			path = Coctails;
 			sourceTree = "<group>";
@@ -162,6 +199,10 @@
 			children = (
 				18222F0C2AF05B93005C1737 /* NewsVC.swift */,
 				18222F0E2AF05B9A005C1737 /* NewsView.swift */,
+				18222F372AF1341E005C1737 /* NewsCell.swift */,
+				18222F392AF13426005C1737 /* NewsModel.swift */,
+				18222F3B2AF13435005C1737 /* dataNews */,
+				18222F3D2AF1343B005C1737 /* NewsDetails */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -171,6 +212,7 @@
 			children = (
 				18222F102AF05BA0005C1737 /* InfoVC.swift */,
 				18222F122AF05BAC005C1737 /* infoView.swift */,
+				18222F252AF13067005C1737 /* GradientLabel.swift */,
 				18222F182AF05C83005C1737 /* Component */,
 				18222F172AF05C7C005C1737 /* Data */,
 			);
@@ -199,6 +241,44 @@
 				18222EEA2AF05743005C1737 /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		18222F1E2AF11E12005C1737 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				18222F1F2AF11E4D005C1737 /* Inter-Black.ttf */,
+				18222F212AF11E4D005C1737 /* Inter-Bold.ttf */,
+				18222F202AF11E4D005C1737 /* Inter-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		18222F2D2AF133AF005C1737 /* CoctailDetails */ = {
+			isa = PBXGroup;
+			children = (
+				18222F2F2AF133DD005C1737 /* CoctailDetailsVC.swift */,
+				18222F312AF133ED005C1737 /* CoctailDetailsView.swift */,
+				18222F2E2AF133BF005C1737 /* CoctailDetailsQR */,
+			);
+			path = CoctailDetails;
+			sourceTree = "<group>";
+		};
+		18222F2E2AF133BF005C1737 /* CoctailDetailsQR */ = {
+			isa = PBXGroup;
+			children = (
+				18222F352AF13407005C1737 /* CoctailDetailsQRVC.swift */,
+				18222F332AF133FE005C1737 /* CoctailDetailsQRView.swift */,
+			);
+			path = CoctailDetailsQR;
+			sourceTree = "<group>";
+		};
+		18222F3D2AF1343B005C1737 /* NewsDetails */ = {
+			isa = PBXGroup;
+			children = (
+				18222F3E2AF13452005C1737 /* NewsDetailsVC.swift */,
+				18222F402AF1345C005C1737 /* NewsDetailsView.swift */,
+			);
+			path = NewsDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +345,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18222F242AF11E4D005C1737 /* Inter-Bold.ttf in Resources */,
 				18222EEE2AF05743005C1737 /* LaunchScreen.storyboard in Resources */,
+				18222F232AF11E4D005C1737 /* Inter-Regular.ttf in Resources */,
 				18222EEB2AF05743005C1737 /* Assets.xcassets in Resources */,
+				18222F2C2AF132D0005C1737 /* dataCoctail in Resources */,
 				18222EE92AF05740005C1737 /* Main.storyboard in Resources */,
+				18222F222AF11E4D005C1737 /* Inter-Black.ttf in Resources */,
+				18222F3C2AF13435005C1737 /* dataNews in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,20 +363,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18222F3A2AF13426005C1737 /* NewsModel.swift in Sources */,
+				18222F302AF133DD005C1737 /* CoctailDetailsVC.swift in Sources */,
 				18222F012AF05B61005C1737 /* BonusVC.swift in Sources */,
 				18222F1A2AF05C98005C1737 /* Service.swift in Sources */,
+				18222F322AF133ED005C1737 /* CoctailDetailsView.swift in Sources */,
+				18222F382AF1341E005C1737 /* NewsCell.swift in Sources */,
+				18222F362AF13407005C1737 /* CoctailDetailsQRVC.swift in Sources */,
+				18222F282AF132B2005C1737 /* CoctailCell.swift in Sources */,
 				18222F0F2AF05B9A005C1737 /* NewsView.swift in Sources */,
 				18222F0B2AF05B89005C1737 /* CardView.swift in Sources */,
 				18222EE22AF05740005C1737 /* AppDelegate.swift in Sources */,
 				18222F112AF05BA0005C1737 /* InfoVC.swift in Sources */,
+				18222F2A2AF132BE005C1737 /* CoctailModel.swift in Sources */,
 				18222F092AF05B83005C1737 /* CardVC.swift in Sources */,
 				18222F132AF05BAC005C1737 /* infoView.swift in Sources */,
 				18222F052AF05B73005C1737 /* CoctailsVC.swift in Sources */,
 				18222F1C2AF05CA4005C1737 /* Settings.swift in Sources */,
 				18222F072AF05B7B005C1737 /* CoctailView.swift in Sources */,
 				18222F032AF05B69005C1737 /* BonusView.swift in Sources */,
+				18222F262AF13067005C1737 /* GradientLabel.swift in Sources */,
 				18222EFF2AF05A67005C1737 /* RootTabBarController.swift in Sources */,
+				18222F342AF133FE005C1737 /* CoctailDetailsQRView.swift in Sources */,
 				18222EE42AF05740005C1737 /* SceneDelegate.swift in Sources */,
+				18222F3F2AF13452005C1737 /* NewsDetailsVC.swift in Sources */,
+				18222F412AF1345C005C1737 /* NewsDetailsView.swift in Sources */,
 				18222F0D2AF05B93005C1737 /* NewsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

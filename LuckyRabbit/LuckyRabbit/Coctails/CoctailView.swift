@@ -2,23 +2,32 @@
 //  CoctailView.swift
 //  LuckyRabbit
 
+import Foundation
 import UIKit
-import SnapKit
 
 class CoctailView: UIView {
     
-    private(set)  var backgroundImage: UIImageView = {
+    private lazy var backgroundimageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "back")
+        imageView.image = UIImage(named: "backBG")
         return imageView
+    }()
+    
+    
+    lazy var coctailTableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.backgroundColor = .clear
+        tableView.showsVerticalScrollIndicator = false
+        tableView.contentInset = UIEdgeInsets(top: 60, left: 0, bottom: -60, right: 0)
+        tableView.register(CoctailCell.self, forCellReuseIdentifier: CoctailCell.reuseId)
+        return tableView
     }()
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupUI()
-        setUpConstraints()
+        setupConstraints()
         
     }
     
@@ -26,15 +35,23 @@ class CoctailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     private func setupUI() {
-        addSubview(backgroundImage)
+        [backgroundimageView,coctailTableView].forEach(addSubview(_:))
         
     }
     
-    private func setUpConstraints(){
-        backgroundImage.snp.makeConstraints { make in
+    
+    private func setupConstraints() {
+        backgroundimageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
+      
+        coctailTableView.snp.makeConstraints { (make) in
+            make.top.bottom.equalToSuperview()
+            make.left.right.equalToSuperview().inset(24)
+        }
     }
 }
+

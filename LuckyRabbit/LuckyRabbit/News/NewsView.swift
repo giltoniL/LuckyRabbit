@@ -10,7 +10,7 @@ import SnapKit
 class NewsView: UIView {
     private(set)  var backgroundImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "back")
+        imageView.image = UIImage(named: "backBG")
         return imageView
     }()
     

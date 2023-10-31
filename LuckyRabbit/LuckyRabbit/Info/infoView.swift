@@ -10,7 +10,7 @@ class InfoView: UIView {
     
     private (set) var backgroundimageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "back")
+        imageView.image = UIImage(named: "backBG")
         return imageView
     }()
     
@@ -20,8 +20,8 @@ class InfoView: UIView {
         return imageView
     }()
     
-    let subTitleLabel: UILabel = {
-        let label = UILabel()
+    private(set) var subTitleLabel: UILabel = {
+        let label = UILabel() // Создайте экземпляр GradientLabel
         label.text = "\(Settings.appTitle)"
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 60)
@@ -30,11 +30,6 @@ class InfoView: UIView {
         return label
     }()
     
-    let backButton: UIButton = {
-        let button = UIButton()
-        button.setBackgroundImage(UIImage(named: "back"), for: .normal)
-        return button
-    }()
     
     lazy var contentLabel: UILabel = {
         let label = UILabel()
