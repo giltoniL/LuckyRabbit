@@ -11,12 +11,12 @@ import SnapKit
 class NewsVC: UIViewController {
     
     
-     var contentView: BonusView {
-        view as? BonusView ?? BonusView()
+     var contentView: NewsView {
+        view as? NewsView ?? NewsView()
     }
     
     override func loadView() {
-        view = BonusView()
+        view = NewsView()
     }
     override func viewDidLoad() {
         super.viewDidLoad()

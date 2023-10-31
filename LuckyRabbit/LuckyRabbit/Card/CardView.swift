@@ -9,6 +9,13 @@ import SnapKit
 class CardView: UIView {
     
 
+    private(set)  var backgroundImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "back")
+        return imageView
+    }()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -22,12 +29,15 @@ class CardView: UIView {
     }
     
     private func setupUI() {
-
-     
-      }
+        addSubview(backgroundImage)
         
-    private func setUpConstraints(){
-
-        }
     }
+    
+    private func setUpConstraints(){
+        backgroundImage.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+    }
+}
 

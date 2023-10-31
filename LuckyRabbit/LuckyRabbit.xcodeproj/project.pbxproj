@@ -109,7 +109,7 @@
 		18222EF62AF05765005C1737 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
-				18222EEA2AF05743005C1737 /* Assets.xcassets */,
+				18222F1D2AF0E117005C1737 /* Assets */,
 			);
 			path = Resourse;
 			sourceTree = "<group>";
@@ -191,6 +191,14 @@
 				18222F1B2AF05CA4005C1737 /* Settings.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		18222F1D2AF0E117005C1737 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				18222EEA2AF05743005C1737 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

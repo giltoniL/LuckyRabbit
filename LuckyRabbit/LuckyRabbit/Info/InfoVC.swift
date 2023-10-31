@@ -11,12 +11,12 @@ import SnapKit
 class InfoVC: UIViewController {
     
     
-     var contentView: BonusView {
-        view as? BonusView ?? BonusView()
+     var contentView: InfoView {
+        view as? InfoView ?? InfoView()
     }
     
     override func loadView() {
-        view = BonusView()
+        view = InfoView()
     }
     override func viewDidLoad() {
         super.viewDidLoad()

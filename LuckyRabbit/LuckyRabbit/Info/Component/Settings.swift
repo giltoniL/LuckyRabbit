@@ -1,8 +1,13 @@
 //
 //  Settings.swift
 //  LuckyRabbit
-//
-//  Created by apple on 30.10.2023.
-//
 
 import Foundation
+
+class Settings {
+    
+    static let appTitle = "Lucky Rabbit"
+    static let appsFlyerKey = ""
+    static var points : Int = 0
+    
+}

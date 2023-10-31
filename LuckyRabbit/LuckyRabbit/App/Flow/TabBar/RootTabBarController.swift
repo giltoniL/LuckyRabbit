@@ -11,6 +11,9 @@ class RootTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UITabBar.appearance().unselectedItemTintColor = .white
+        UITabBar.appearance().tintColor = .yellow
+        
         
         let bonusVC = BonusVC()
         buildConfig(bonusVC, title: "Bonus")
