@@ -25,12 +25,7 @@ class CoctailsVC: UIViewController {
         contentView.coctailTableView.dataSource = self
         contentView.coctailTableView.delegate = self
         loadModel()
-//        setupBackButton()
     }
-    
-//    func setupBackButton() {
-//        contentView.backButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-//    }
     
     func loadModel() {
         service.coctailReadData { [weak self] models in
@@ -38,15 +33,9 @@ class CoctailsVC: UIViewController {
             self.items = models
             self.contentView.coctailTableView.reloadData()
         } errorComletion: { error in
-            print("Troll")
+            print(#function)
         }
     }
-    
-//    @objc func buttonTapped() {
-//        
-//        navigationController?.popViewController(animated: true)
-//        
-//    }
 }
 
 extension CoctailsVC: UITableViewDataSource, UITableViewDelegate {
@@ -78,33 +67,33 @@ extension CoctailsVC: UITableViewDataSource, UITableViewDelegate {
         
         coctailDetailsVC.model = item
         
-        present(coctailDetailsVC, animated: true)
+        navigationController?.pushViewController(coctailDetailsVC, animated: true)
         
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 60))
-            headerView.backgroundColor = .clear
-          
-            let titleLabel = UILabel()
-            titleLabel.text = "Coctails"
-            titleLabel.font = UIFont(name: "Inter-Black", size: 60)
-            titleLabel.textAlignment = .center
-            titleLabel.textColor = .white
-            titleLabel.frame = headerView.bounds
-            
-            headerView.addSubview(titleLabel)
-            
-            return headerView
-        }
-
-        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 60.0
-        }
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 60))
+        headerView.backgroundColor = .clear
         
-        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            return "Coctails"
-        }
+        let titleLabel = UILabel()
+        titleLabel.text = "Coctails"
+        titleLabel.font = UIFont(name: "Inter-Black", size: 60)
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .white
+        titleLabel.frame = headerView.bounds
+        
+        headerView.addSubview(titleLabel)
+        
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60.0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Coctails"
+    }
 }
 

@@ -21,13 +21,14 @@ class CoctailDetailsView: UIView {
         return button
     }()
     
-//    private (set) var coctailLabel: UILabel = {
-//        let label = UILabel()
-//        label.textColor = .white
-//        label.font = UIFont(name: "Inter-Black", size: 60)
-//        label.numberOfLines = 0
-//        return label
-//    }()
+    private (set) var coctailLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.text = "Coctail"
+        label.font = UIFont(name: "Inter-Black", size: 40)
+        label.numberOfLines = 0
+        return label
+    }()
     
     private (set) var coctailDetailConteiner: UIView = {
         let view = UIView()
@@ -145,7 +146,7 @@ class CoctailDetailsView: UIView {
     
     
     private func setupUI() {
-        [backgroundimageView,coctailDetailConteiner,backButton] .forEach(addSubview(_:))
+        [backgroundimageView,coctailDetailConteiner,coctailLabel,backButton] .forEach(addSubview(_:))
         
         coctailDetailConteiner.addSubview(coctailConteiner)
         
@@ -171,15 +172,15 @@ class CoctailDetailsView: UIView {
             make.top.equalToSuperview().inset(56)
         }
         
-//        coctailLabel.snp.makeConstraints { (make) in
-//            make.centerX.equalToSuperview()
-//            make.top.equalToSuperview().inset(56)
-//        }
+        coctailLabel.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().inset(56)
+        }
         
         coctailDetailConteiner.snp.makeConstraints { make in
             make.top.equalTo(backButton.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(24)
-            make.bottom.equalToSuperview().offset(-56)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-56)
         }
 
         coctailConteiner.snp.makeConstraints { make in

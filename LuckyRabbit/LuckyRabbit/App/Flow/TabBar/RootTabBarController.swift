@@ -12,10 +12,10 @@ class RootTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBar.barTintColor = UIColor.red
         
         UITabBar.appearance().unselectedItemTintColor = .white
         UITabBar.appearance().tintColor = .yellow
+        UITabBar.appearance().backgroundColor = .purple
         
         
         let bonusVC = BonusVC()
@@ -23,7 +23,8 @@ class RootTabBarController: UITabBarController {
         
         
         let coctailsVC = CoctailsVC()
-        buildConfig(coctailsVC, title: "Coctails")
+        let coctailsNavController = UINavigationController(rootViewController: coctailsVC)
+        buildConfig(coctailsNavController, title: "Coctails")
         
         let cardVC = CardVC()
         buildConfig(cardVC, title: "Card")
@@ -34,7 +35,7 @@ class RootTabBarController: UITabBarController {
         let infoVC = InfoVC()
         buildConfig(infoVC, title: "Info")
         
-        viewControllers = [bonusVC, coctailsVC, cardVC, newsVC, infoVC]
+        viewControllers = [bonusVC, coctailsNavController, cardVC, newsVC, infoVC]
         
     }
     

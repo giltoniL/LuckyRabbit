@@ -40,23 +40,27 @@ class CoctailDetailsVC: UIViewController {
         setupBackButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
         
     func setupBackButton() {
-//        contentView.payButton.addTarget(self, action: #selector(showQRCode), for: .touchUpInside)
+        contentView.payButton.addTarget(self, action: #selector(showQRCode), for: .touchUpInside)
         contentView.backButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
     @objc func buttonTapped() {
         
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
-//    @objc func showQRCode() {
-//        let giftsDetailQrVC = GiftsDetailQrVC()
-//        giftsDetailQrVC.id = model.id
-//        present(giftsDetailQrVC, animated: true)
-//        
-//    }
+    @objc func showQRCode() {
+        let coctailDetailsQRVC = CoctailDetailsQRVC()
+        coctailDetailsQRVC.id = model.id
+        present(coctailDetailsQRVC, animated: true)
+        
+    }
     
     func generateQRCode(from string: String, size: CGSize) -> UIImage? {
         if let data = string.data(using: .utf8), let qrFilter = CIFilter(name: "CIQRCodeGenerator") {

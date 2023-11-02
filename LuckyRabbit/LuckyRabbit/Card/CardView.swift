@@ -11,13 +11,19 @@ class CardView: UIView {
 
     private(set)  var backgroundImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "backBGCard")
+        imageView.image = UIImage(named: "backBG")
         return imageView
     }()
     
     private(set)  var qRImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "qRCodeCard")
+        return imageView
+    }()
+    
+    private(set)  var rabbitGroupImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "RabbitGroup")
         return imageView
     }()
     
@@ -64,7 +70,7 @@ class CardView: UIView {
     }
     
     private func setupUI() {
-        [backgroundImage,qRImage,conteinerBalance].forEach(addSubview(_:))
+        [backgroundImage,qRImage,rabbitGroupImage,conteinerBalance].forEach(addSubview(_:))
         conteinerBalance.addSubview(balanceLabel)
         conteinerBalance.addSubview(scoreLabel)
     }
@@ -80,8 +86,15 @@ class CardView: UIView {
             make.size.equalTo(300)
         }
         
+        rabbitGroupImage.snp.makeConstraints { make in
+            make.top.equalTo(qRImage.snp.bottom)
+            make.bottom.equalTo(conteinerBalance.snp.top).offset(-10)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(rabbitGroupImage.snp.width).multipliedBy(0.9)
+        }
+        
         conteinerBalance.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-60)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-40)
             make.left.right.equalToSuperview().inset(24)
             make.height.equalTo(conteinerBalance.snp.width).multipliedBy(0.43)
             
