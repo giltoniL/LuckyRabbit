@@ -24,6 +24,7 @@ class CardView: UIView {
     private(set)  var rabbitGroupImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "RabbitGroup")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     

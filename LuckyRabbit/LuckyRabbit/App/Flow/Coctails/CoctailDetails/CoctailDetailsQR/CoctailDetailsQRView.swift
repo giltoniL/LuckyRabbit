@@ -20,10 +20,25 @@ class CoctailDetailsQRView: UIView {
         return button
     }()
     
+    private (set) var coctailQrConteiner: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    
+    private (set) var coctailConteiner: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(named: "purple")
+        view.layer.cornerRadius = 12
+        view.layer.borderWidth = 2
+        view.layer.borderColor = UIColor(named: "lightPink")?.cgColor
+        return view
+    }()
+    
     private (set) var coctailLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.text = "Coctail"
+        label.text = "Coctails"
         label.font = UIFont(name: "Inter-Black", size: 40)
         label.numberOfLines = 0
         return label
@@ -54,16 +69,22 @@ class CoctailDetailsQRView: UIView {
         
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        coctailConteiner.dropShadow(color: UIColor(named: "lightPink"), opacity: 1, offSet:.zero, radius: 29, cornerRadius: 12)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     private func setupUI() {
-        addSubview(backgroundimageView)
-        addSubview(backButton)
-        addSubview(coctailLabel)
-        addSubview(qrCodeImageView)
-        addSubview(hideButton)
+        [backgroundimageView,coctailQrConteiner,coctailLabel,backButton] .forEach(addSubview(_:))
+        
+        coctailQrConteiner.addSubview(coctailConteiner)
+        
+        coctailConteiner.addSubview(qrCodeImageView)
+        coctailConteiner.addSubview(hideButton)
     }
     
     private func setupConstraints() {
@@ -83,8 +104,18 @@ class CoctailDetailsQRView: UIView {
             make.top.equalToSuperview().inset(56)
         }
         
+        coctailQrConteiner.snp.makeConstraints { make in
+            make.top.equalTo(backButton.snp.bottom).offset(20)
+            make.left.right.equalToSuperview().inset(24)
+            make.bottom.equalToSuperview().offset(-46)
+        }
+        
+        coctailConteiner.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         qrCodeImageView.snp.makeConstraints { make in
-            make.top.equalTo(coctailLabel.snp.bottom).offset(80)
+            make.top.equalToSuperview().offset(80)
             make.left.right.equalToSuperview().inset(20)
             make.height.equalTo(qrCodeImageView.snp.width)
         }

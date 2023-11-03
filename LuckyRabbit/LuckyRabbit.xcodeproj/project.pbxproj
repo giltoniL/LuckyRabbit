@@ -118,11 +118,6 @@
 				18222EEC2AF05743005C1737 /* LaunchScreen.storyboard */,
 				18222EEF2AF05743005C1737 /* Info.plist */,
 				18222EF52AF05754005C1737 /* App */,
-				18222EF92AF059B8005C1737 /* Bonus */,
-				18222EFB2AF059CE005C1737 /* Coctails */,
-				18222EFA2AF059BE005C1737 /* Card */,
-				18222EFC2AF059EA005C1737 /* News */,
-				18222EFD2AF059EF005C1737 /* Info */,
 				18222EF62AF05765005C1737 /* Resourse */,
 			);
 			path = LuckyRabbit;
@@ -151,6 +146,13 @@
 			isa = PBXGroup;
 			children = (
 				18222EF82AF057B2005C1737 /* TabBar */,
+				18222EF92AF059B8005C1737 /* Bonus */,
+				18222EFB2AF059CE005C1737 /* Coctails */,
+				18222EFA2AF059BE005C1737 /* Card */,
+				18222EFC2AF059EA005C1737 /* News */,
+				18222EFD2AF059EF005C1737 /* Info */,
+				18222F182AF05C83005C1737 /* Component */,
+				18222F172AF05C7C005C1737 /* Data */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -213,8 +215,6 @@
 				18222F102AF05BA0005C1737 /* InfoVC.swift */,
 				18222F122AF05BAC005C1737 /* infoView.swift */,
 				18222F252AF13067005C1737 /* GradientLabel.swift */,
-				18222F182AF05C83005C1737 /* Component */,
-				18222F172AF05C7C005C1737 /* Data */,
 			);
 			path = Info;
 			sourceTree = "<group>";

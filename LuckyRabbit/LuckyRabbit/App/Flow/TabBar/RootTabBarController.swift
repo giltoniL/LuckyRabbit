@@ -30,12 +30,13 @@ class RootTabBarController: UITabBarController {
         buildConfig(cardVC, title: "Card")
         
         let newsVC = NewsVC()
-        buildConfig(newsVC, title: "News")
+        let newsNavController = UINavigationController(rootViewController: newsVC)
+        buildConfig(newsNavController, title: "News")
         
         let infoVC = InfoVC()
         buildConfig(infoVC, title: "Info")
         
-        viewControllers = [bonusVC, coctailsNavController, cardVC, newsVC, infoVC]
+        viewControllers = [bonusVC, coctailsNavController, cardVC, newsNavController, infoVC]
         
     }
     

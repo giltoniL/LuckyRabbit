@@ -40,7 +40,7 @@ class Service {
         }
     }
     
-    func newsreadDara(successCompletion: @escaping ([NewsModel]) -> Void, errorComletion: @escaping (Error) -> Void) {
+    func newsReadData(successCompletion: @escaping ([NewsModel]) -> Void, errorComletion: @escaping (Error) -> Void) {
         guard let url = Bundle.main.url(forResource: "dataNews", withExtension: nil) else {
             print("Failed to locate  in bundle.")
             errorComletion(ModelsError.unknown)

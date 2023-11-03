@@ -24,7 +24,7 @@ class CoctailDetailsView: UIView {
     private (set) var coctailLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.text = "Coctail"
+        label.text = "Coctails"
         label.font = UIFont(name: "Inter-Black", size: 40)
         label.numberOfLines = 0
         return label
@@ -57,7 +57,7 @@ class CoctailDetailsView: UIView {
     
     private (set) var coctailBigImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 30
+        imageView.layer.cornerRadius = 12
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -180,15 +180,11 @@ class CoctailDetailsView: UIView {
         coctailDetailConteiner.snp.makeConstraints { make in
             make.top.equalTo(backButton.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(24)
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-56)
+            make.bottom.equalToSuperview().offset(-46)
         }
 
         coctailConteiner.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-        }
-        
-        payButton.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview().inset(20)
         }
         
         coctailBigImage.snp.makeConstraints { make in
@@ -232,5 +228,10 @@ class CoctailDetailsView: UIView {
             make.top.equalTo(creditsScoreLabel.snp.bottom).offset(20)
         }
         
+        payButton.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().offset(-36)
+            make.height.equalTo(payButton.snp.width).multipliedBy(0.16)
+        }
     }
 }

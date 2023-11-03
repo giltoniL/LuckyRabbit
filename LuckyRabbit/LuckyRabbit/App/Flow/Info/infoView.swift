@@ -24,7 +24,7 @@ class InfoView: UIView {
         let label = UILabel() // Создайте экземпляр GradientLabel
         label.text = "\(Settings.appTitle)"
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 60)
+        label.font = UIFont(name: "Inter-Black", size: 48)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -35,7 +35,7 @@ class InfoView: UIView {
         let label = UILabel()
         label.text = "Lorem ipsum dolor sit amet consectetur. Justo cras accumsan tellus porttitor venenatis venenatis quam. Placerat non at vestibulum vulputate. Scelerisque etiam id feugiat nibh facilisis nibh egestas. Nunc tempor adipiscing eleifend facilisis lectus leo venenatis. Sed euismod sed sodales vel in quam parturient. Consequat sed pretium senectus orci praesent tincidunt hac maecenas sed. Ultrices sed amet penatibus magna sit ut egestas et aenean. Eget accumsan a sapien sit sagittis ultrices in accumsan. Viverra amet volutpat egestas metus.Sit venenatis egestas cras lectus. Gravida ornare sed aliquam pellentesque. Justo neque orci neque mollis est sit varius. Ipsum nulla fringilla habitant phasellus lobortis aliquet faucibus nullam. Purus nulla a dui non lacus eget adipiscing. Sit dolor et varius adipiscing non praesent. Enim tortor vestibulum odio molestie tortor vulputate turpis. Habitant varius vulputate integer integer fermentum lectus arcu odio. Nibh eget pretium vitae sed scelerisque mauris ipsum pharetra sagittis. Placerat erat faucibus nisl nunc ut sed volutpat gravida nibh.leo venenatis. Sed euismod sed sodales vel in quam parturient. Consequat sed pretium senectus orci praesent tincidunt hac maecenas sed. Ultrices sed amet penatibus magna sit ut egestas et aenean. Eget accumsan a sapien sit sagittis ultrices in accumsan. Viverra amet volutpat egestas metus.Sit venenatis egestas cras lectus. Gravida ornare sed aliquam pellentesque. Justo neque orci neque mollis est sit varius. Ipsum nulla fringilla habitant phasellus lobortis aliquet faucibus nullam. Purus nulla a dui non lacus eget adipiscing. Sit dolor et varius adipiscing non praesent. Enim tortor vestibulum odio molestie tortor vulputate turpis. Habitant varius vulputate integer integer fermentum lectus arcu odio. Nibh eget pretium vitae sed scelerisque mauris ipsum pharetra sagittis. Placerat erat faucibus nisl nunc ut sed volutpat gravida nibh.leo venenatis. Sed euismod sed sodales vel in quam parturient. Consequat sed pretium senectus orci praesent tincidunt hac maecenas sed. Ultrices sed amet penatibus magna sit ut egestas et aenean. Eget accumsan a sapien sit sagittis ultrices in accumsan. Viverra amet volutpat egestas metus.Sit venenatis egestas cras lectus. Gravida ornare sed aliquam pellentesque. Justo neque orci neque mollis est sit varius. Ipsum nulla fringilla habitant phasellus lobortis aliquet faucibus nullam. Purus nulla a dui non lacus eget adipiscing. Sit dolor et varius adipiscing non praesent. Enim tortor vestibulum odio molestie tortor vulputate turpis. Habitant varius vulputate integer integer fermentum lectus arcu odio. Nibh eget pretium vitae sed scelerisque mauris ipsum pharetra sagittis. Placerat erat faucibus nisl nunc ut sed volutpat gravida nibh."
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont(name: "Inter-Regular", size: 12)
         label.numberOfLines = 0
         return label
     }()
