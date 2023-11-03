@@ -19,7 +19,13 @@ class BonusScreenVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        contentView.thanksButton.addTarget(self, action: #selector(closeView), for: .touchUpInside)
 
+    }
+    @objc func closeView() {
+        UserSettings.shared.lastBonusDate = Date()
+        dismiss(animated: true)
+        
     }
 
 }

@@ -16,11 +16,11 @@ class BonusView: UIView {
         return imageView
     }()
     
-    private(set)  var sectordImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "frameSector")
-        return imageView
-    }()
+//    private(set)  var sectordImage: UIImageView = {
+//        let imageView = UIImageView()
+//        imageView.image = UIImage(named: "frameSector")
+//        return imageView
+//    }()
     
     private (set) var spinButton: UIButton = {
         let button = UIButton()
@@ -42,10 +42,43 @@ class BonusView: UIView {
         return label
     }()
     
+    private(set)  var timerView: UIView = {
+        let view = UIView()
+        view.isHidden = true
+        view.backgroundColor = .red
+        return view
+    }()
+    
+    private(set)  var backgroundTimeImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "backTimeBonusBg")
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+
+    private(set)  var titleTimeLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = UIFont(name: "Inter-Regular", size: 20)
+        label.text = "Time to next spin"
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        return label
+    }()
+
+    private(set) lazy var timecountLabel: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.textAlignment = .center
+        label.textColor = .white
+        label.font = UIFont(name: "Inter-Black", size: 60)
+        return label
+    }()
+    
+    let sector = SlotAnimateView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .brown
         setupUI()
         setUpConstraints()
         
@@ -57,13 +90,36 @@ class BonusView: UIView {
     
     private func setupUI() {
         addSubview(backgroundImage)
-        addSubview(sectordImage)
+        addSubview(sector)
         addSubview(spinButton)
         addSubview(titleLabel)
+        addSubview(timerView)
+        
+        timerView.addSubview(backgroundTimeImage)
+        timerView.addSubview(titleTimeLabel)
+        timerView.addSubview(timecountLabel)
         
     }
     
     private func setUpConstraints(){
+       
+        timerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        backgroundTimeImage.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        titleTimeLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(60)
+        }
+        
+        timecountLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(titleTimeLabel.snp.bottom).offset(12)
+        }
         
         backgroundImage.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -74,8 +130,10 @@ class BonusView: UIView {
             make.left.right.equalToSuperview().inset(54)
         }
         
-        sectordImage.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+        sector.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(46)
+            make.centerY.equalToSuperview()
+            make.height.equalTo(sector.snp.width)
         }
         
         spinButton.snp.makeConstraints { make in

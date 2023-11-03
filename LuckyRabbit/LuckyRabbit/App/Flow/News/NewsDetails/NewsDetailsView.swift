@@ -6,6 +6,7 @@
 import Foundation
 import UIKit
 
+
 class NewsDetailView: UIView {
     
     private lazy var backgroundimageView: UIImageView = {
@@ -42,7 +43,7 @@ class NewsDetailView: UIView {
         scrollView.backgroundColor = .clear
         scrollView.isScrollEnabled = true
         scrollView.isDirectionalLockEnabled = true
-        scrollView.contentInset = UIEdgeInsets(top: 56, left: 0, bottom: -56, right: 0)
+        scrollView.contentInset = UIEdgeInsets(top: 56, left: 0, bottom: 0, right: 0)
         return scrollView
     }()
     
@@ -100,9 +101,10 @@ class NewsDetailView: UIView {
     
     
     private func setupUI() {
-        [backgroundimageView,backButton,newsLabel,newsScrollView,] .forEach(addSubview(_:))
+        [backgroundimageView,newsScrollView,backButton] .forEach(addSubview(_:))
         
         newsScrollView.addSubview(newsDetailConteiner)
+        newsScrollView.addSubview(newsLabel)
         
         newsDetailConteiner.addSubview(titleNewsLabel)
         newsDetailConteiner.addSubview(newsDetailImage)
@@ -118,34 +120,32 @@ class NewsDetailView: UIView {
         
         backButton.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(24)
-            make.top.equalToSuperview().inset(56)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(12)
+        }
+        
+        
+        newsScrollView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.left.right.equalToSuperview().inset(24)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
         }
         
         newsLabel.snp.makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(56)
-        }
-        
-//        infoScrollView.snp.makeConstraints { make in
-//            make.left.right.equalToSuperview().inset(24)
-//            make.bottom.top.equalToSuperview()
-//        }
-        
-    
-        
-        newsScrollView.snp.makeConstraints { make in
-            make.top.equalTo(backButton.snp.bottom).offset(20)
-            make.left.right.equalToSuperview().inset(24)
-            make.bottom.equalToSuperview().offset(-56)
+            make.top.equalToSuperview()
         }
         
         newsDetailConteiner.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(newsLabel.snp.bottom).offset(10)
+            make.left.right.bottom.equalToSuperview()
             make.centerX.equalToSuperview()
         }
         
+       
+
         newsDetailImage.snp.makeConstraints { make in
-            make.left.right.top.equalToSuperview()
+            make.top.equalToSuperview()
+            make.left.right.equalToSuperview()
             make.width.equalTo(345)
             make.height.equalTo(208)
         }

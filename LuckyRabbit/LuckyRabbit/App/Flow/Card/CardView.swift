@@ -131,34 +131,18 @@ extension UIView {
         maskLayer.frame = bounds
         maskLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
         
-        //
-        // Make the mask area bigger than the view, so the shadow itself does not get clipped by the mask
-        //
-        let shadowBorder:CGFloat = (layer.shadowRadius * 2) + 5;
-        maskLayer.frame = maskLayer.frame.insetBy(dx:  -shadowBorder, dy:  -shadowBorder)  // Make bigger
-        maskLayer.frame = maskLayer.frame.offsetBy(dx: shadowBorder/2, dy: shadowBorder/2) // Move top and left
+        let shadowBorder:CGFloat = (layer.shadowRadius * 2) + 5
+        maskLayer.frame = maskLayer.frame.insetBy(dx:  -shadowBorder, dy:  -shadowBorder)
+        maskLayer.frame = maskLayer.frame.offsetBy(dx: shadowBorder/2, dy: shadowBorder/2)
         
-        // Allow for cut outs in the shape
         maskLayer.fillRule = .evenOdd
-        
-        
-        //
-        // Create new path
-        //
+                
         let pathMasking = CGMutablePath()
-        // Add the outer view frame
         pathMasking.addPath(UIBezierPath(rect: maskLayer.frame).cgPath)
-        // Translate into the shape back to the smaller original view's frame start point
         var catShiftBorder = CGAffineTransform(translationX: shadowBorder/2, y: shadowBorder/2)
-        // Now add the original path for the cut out the shape of the original view
         pathMasking.addPath(maskLayer.path!.copy(using: &catShiftBorder)!)
-        // Set this big rect with a small cutout rect as the mask
         maskLayer.path = pathMasking;
         
-        
-        //
-        // Set as a mask on the view with the shadow
-        //
         layer.mask = maskLayer
         self.layer.addSublayer(layer)
     }

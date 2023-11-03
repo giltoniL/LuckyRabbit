@@ -14,32 +14,49 @@ class BonusScreenView: UIView {
         return imageView
     }()
     
-    private(set)  var sectordImage: UIImageView = {
+    private(set)  var titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = UIFont(name: "Inter-Black", size: 60)
+        label.text = "Your \nbonus"
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private(set)  var iconImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "frameSector")
+        imageView.image = UIImage(named: "iconBonus")
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
-    private (set) var spinButton: UIButton = {
+    private(set)  var scoreLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .yellow
+        label.font = UIFont(name: "Inter-Black", size: 60)
+        label.text = "100"
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private(set)  var rabbitImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "rabbitBonus")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private (set) var thanksButton: UIButton = {
         let button = UIButton()
-        button.setTitle("SPIN BUTTON", for: .normal)
+        button.setTitle("Thanks", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .yellow
         button.titleLabel?.font = UIFont(name: "Inter-Bold", size: 20)
         button.layer.cornerRadius = 12
         return button
     }()
-    
-    private(set)  var titleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.font = UIFont(name: "Inter-Black", size: 60)
-        label.text = "Get dayli \nbonus"
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        return label
-    }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,9 +72,11 @@ class BonusScreenView: UIView {
     
     private func setupUI() {
         addSubview(backgroundImage)
-        addSubview(sectordImage)
-        addSubview(spinButton)
         addSubview(titleLabel)
+        addSubview(iconImage)
+        addSubview(scoreLabel)
+        addSubview(rabbitImage)
+        addSubview(thanksButton)
         
     }
     
@@ -68,18 +87,31 @@ class BonusScreenView: UIView {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(12)
-            make.left.right.equalToSuperview().inset(54)
+            make.top.equalToSuperview().offset(40)
+            make.left.right.equalToSuperview().inset(73)
         }
         
-        sectordImage.snp.makeConstraints { make in
+        iconImage.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(96)
+            make.top.equalToSuperview().offset(198)
+        }
+        
+        scoreLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(180)
+            make.left.equalTo(iconImage.snp.right).offset(8)
+        }
+        
+        rabbitImage.snp.makeConstraints { make in
+//            make.top.equalTo(scoreLabel.snp.bottom).offset(53)
             make.center.equalToSuperview()
+//            make.width.equalTo(rabbitImage.snp.height).multipliedBy(0.7)
+//            make.bottom.equalTo(thanksButton.snp.top).offset(-53)
         }
         
-        spinButton.snp.makeConstraints { make in
-            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-60)
+        thanksButton.snp.makeConstraints { make in
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-30)
             make.left.right.equalToSuperview().inset(24)
-            make.height.equalTo(spinButton.snp.width).multipliedBy(0.16)
+            make.height.equalTo(thanksButton.snp.width).multipliedBy(0.16)
         }
     }
 }
