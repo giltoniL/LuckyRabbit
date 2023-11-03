@@ -1,14 +1,12 @@
 //
-//  BonusView.swift
+//  BonusScreenView.swift
 //  LuckyRabbit
-
-
 
 
 import UIKit
 import SnapKit
 
-class BonusView: UIView {
+class BonusScreenView: UIView {
     
     private(set)  var backgroundImage: UIImageView = {
         let imageView = UIImageView()

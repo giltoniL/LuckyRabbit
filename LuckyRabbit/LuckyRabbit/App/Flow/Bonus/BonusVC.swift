@@ -1,9 +1,7 @@
 //
 //  BonusVC.swift
 //  LuckyRabbit
-//
-//  Created by apple on 30.10.2023.
-//
+
 
 import UIKit
 import SnapKit
