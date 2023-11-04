@@ -44,7 +44,7 @@ class CoctailDetailsVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-        
+    
     func setupBackButton() {
         contentView.payButton.addTarget(self, action: #selector(showQRCode), for: .touchUpInside)
         contentView.backButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)

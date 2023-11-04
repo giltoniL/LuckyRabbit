@@ -24,4 +24,8 @@ class CardVC: UIViewController {
 
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        contentView.scoreLabel.text = "\(UserSettings.shared.balanceCount)"
+    }
 }

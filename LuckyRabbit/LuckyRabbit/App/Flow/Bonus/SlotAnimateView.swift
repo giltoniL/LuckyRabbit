@@ -10,8 +10,6 @@ class SlotAnimateView: UIView {
     
     let gradientView = GradientView()
     
-    
-    
     private(set)  var sectordImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "frameSector")
@@ -66,7 +64,6 @@ class SlotAnimateView: UIView {
         
     }
     
-    
     private func setUpConstraints(){
         
         sectordImage.snp.makeConstraints { make in
@@ -93,7 +90,6 @@ class SlotAnimateView: UIView {
             let y = index / 5
             if y == 2 {
                 label.textColor = .yellow
-                label.text = "10"
             }
         }
         
@@ -111,14 +107,15 @@ class SlotAnimateView: UIView {
         }
     }
     
-    func spinLabels() {
-        let container = UIView() // Создаем общий контейнер для всех меток
+    func spinLabels(completion: (() -> Void)? = nil) {
+        let container = UIView()
         addSubview(container)
-
+        
         for (index, label) in labels.enumerated() {
             container.addSubview(label)
             label.frame.origin.y = CGFloat(index / 5) * label.frame.size.height
         }
+        
         let animation = CAKeyframeAnimation(keyPath: "position.y")
         let startY = -2500
         let endY = labels.first?.frame.origin.y ?? 0
@@ -128,6 +125,10 @@ class SlotAnimateView: UIView {
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.repeatCount = 1
         container.layer.add(animation, forKey: "spinAnimation")
-
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            completion?()
+        }
     }
+    
 }

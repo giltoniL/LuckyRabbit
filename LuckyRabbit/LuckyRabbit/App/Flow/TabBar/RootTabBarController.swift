@@ -44,19 +44,3 @@ class RootTabBarController: UITabBarController {
         vc.tabBarItem.title = title
     }
 }
-
-
-//func goDailyScreen() {
-//    let vc = DailyBonusVC()
-//    if let lastVisitDate = UserSettings.shared.lastBonusDate {
-//        let calendar = Calendar.current
-//        if let hours = calendar.dateComponents([.hour], from: lastVisitDate, to: Date()).hour, hours < 24 {
-//            let vcDate = WaitDateVC()
-////            navigationController?.pushViewController(vcDate, animated: true)
-//        } else {
-////            navigationController?.pushViewController(vc, animated: true)
-//        }
-//    } else {
-////        navigationController?.pushViewController(vc, animated: true)
-//    }
-//}

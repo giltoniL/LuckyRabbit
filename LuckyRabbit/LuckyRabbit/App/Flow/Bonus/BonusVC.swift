@@ -26,15 +26,23 @@ class BonusVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        goDailyScreen()
+        goDailyScreen()
         startCountdownTimer()
         
     }
     
     @objc func openBonus() {
-        contentView.sector.spinLabels()
-        
+        contentView.sector.spinLabels { [weak self] in
+            self?.presentBonusScreenVC()
+        }
     }
+    
+    func presentBonusScreenVC() {
+        let bonusScreenVC = BonusScreenVC()
+        bonusScreenVC.modalPresentationStyle = .fullScreen
+        present(bonusScreenVC, animated: true, completion: nil)
+    }
+    
     
 }
 

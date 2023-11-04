@@ -8,16 +8,22 @@ import SnapKit
 
 class CardView: UIView {
     
+    private let uuid = UUID()
 
+    
     private(set)  var backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "backBG")
         return imageView
     }()
     
-    private(set)  var qRImage: UIImageView = {
+    private(set) lazy var qRImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "qRCodeCard")
+        let image = generateQRCode(from: uuid.uuidString)
+        imageView.image = image
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 12
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -46,9 +52,10 @@ class CardView: UIView {
     }()
     
     private(set)  var scoreLabel: UILabel = {
+        var balance = UserSettings.shared.balanceCount
         let label = UILabel()
         label.textColor = .white
-        label.text = "1000"
+        label.text = "\(balance)"
         label.font = UIFont(name: "Inter-Black", size: 60)
         return label
     }()
@@ -82,7 +89,7 @@ class CardView: UIView {
         }
         
         qRImage.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(12)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(34)
             make.centerX.equalToSuperview()
             make.size.equalTo(300)
         }
@@ -115,6 +122,22 @@ class CardView: UIView {
 }
 
 extension UIView {
+    
+    func generateQRCode(from string: String) -> UIImage? {
+        if let qrFilter = CIFilter(name: "CIQRCodeGenerator") {
+            qrFilter.setValue(string.data(using: .utf8), forKey: "inputMessage")
+            if let qrCodeImage = qrFilter.outputImage {
+                let transform = CGAffineTransform(scaleX: 8, y: 8)
+                let scaledQRImage = qrCodeImage.transformed(by: transform)
+                let context = CIContext()
+                if let cgImage = context.createCGImage(scaledQRImage, from: scaledQRImage.extent) {
+                    let qrCode = UIImage(cgImage: cgImage)
+                    return qrCode
+                }
+            }
+        }
+        return nil
+    }
     
     func dropShadow(color: UIColor?, opacity: Float, offSet: CGSize, radius: CGFloat,cornerRadius: CGFloat) {
         let layer = CALayer()

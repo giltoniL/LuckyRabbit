@@ -16,12 +16,6 @@ class BonusView: UIView {
         return imageView
     }()
     
-//    private(set)  var sectordImage: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.image = UIImage(named: "frameSector")
-//        return imageView
-//    }()
-    
     private (set) var spinButton: UIButton = {
         let button = UIButton()
         button.setTitle("SPIN BUTTON", for: .normal)
@@ -36,7 +30,7 @@ class BonusView: UIView {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont(name: "Inter-Black", size: 60)
-        label.text = "Get dayli \nbonus"
+        label.text = "Get daily \nbonus"
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -55,7 +49,7 @@ class BonusView: UIView {
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-
+    
     private(set)  var titleTimeLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -65,7 +59,7 @@ class BonusView: UIView {
         label.numberOfLines = 0
         return label
     }()
-
+    
     private(set) lazy var timecountLabel: UILabel = {
         let label = UILabel()
         label.text = ""
@@ -102,7 +96,7 @@ class BonusView: UIView {
     }
     
     private func setUpConstraints(){
-       
+        
         timerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

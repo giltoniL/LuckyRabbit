@@ -13,8 +13,7 @@ class CoctailView: UIView {
         return imageView
     }()
     
-    
-    lazy var coctailTableView: UITableView = {
+    private lazy var coctailTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
@@ -47,7 +46,7 @@ class CoctailView: UIView {
             make.edges.equalToSuperview()
         }
         
-      
+        
         coctailTableView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)

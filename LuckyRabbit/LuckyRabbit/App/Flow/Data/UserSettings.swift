@@ -29,6 +29,7 @@ class UserSettings {
     }
     
     var balanceCount: Int {
+        
         get {
             return defaults.integer(forKey: "balanceCount")
         }
