@@ -8,7 +8,6 @@ import SnapKit
 
 class BonusScreenView: UIView {
     
-    let randomNumber = [5, 10, 15].randomElement() ?? 0
     
     private(set)  var backgroundImage: UIImageView = {
         let imageView = UIImageView()
@@ -33,11 +32,11 @@ class BonusScreenView: UIView {
         return imageView
     }()
     
-    private(set) lazy var scoreLabel: UILabel = {
+     var scoreLabel: UILabel = {
         let label = UILabel()
         label.textColor = .yellow
         label.font = UIFont(name: "Inter-Black", size: 60)
-        label.text = "\(randomNumber.self)"
+        label.text = ""
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -95,16 +94,18 @@ class BonusScreenView: UIView {
         
         iconImage.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(96)
-            make.top.equalToSuperview().offset(198)
+            make.top.equalTo(titleLabel.snp.bottom).offset(32)
         }
         
         scoreLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(180)
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.left.equalTo(iconImage.snp.right).offset(20)
         }
         
         rabbitImage.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.left.right.equalToSuperview().inset(24)
+            make.top.equalTo(scoreLabel.snp.bottom).offset(53)
+            make.bottom.equalTo(thanksButton.snp.top).offset(-53)
         }
         
         thanksButton.snp.makeConstraints { make in

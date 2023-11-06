@@ -27,7 +27,6 @@ class BonusVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         goDailyScreen()
-        startCountdownTimer()
         
     }
     
@@ -39,6 +38,7 @@ class BonusVC: UIViewController {
     
     func presentBonusScreenVC() {
         let bonusScreenVC = BonusScreenVC()
+        bonusScreenVC.total = contentView.sector.total
         bonusScreenVC.modalPresentationStyle = .fullScreen
         present(bonusScreenVC, animated: true, completion: nil)
     }
@@ -53,13 +53,11 @@ extension BonusVC {
             if let hours = calendar.dateComponents([.hour], from: lastVisitDate, to: Date()).hour, hours < 24 {
                 isTime = true
                 contentView.timerView.isHidden = false
+                startCountdownTimer()
             } else {
                 isTime = false
                 contentView.timerView.isHidden = true
             }
-        } else {
-            isTime = false
-            contentView.timerView.isHidden = true
         }
     }
     

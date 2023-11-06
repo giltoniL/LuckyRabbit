@@ -9,6 +9,7 @@ class UserSettings {
     
     static let shared = UserSettings()
     private let defaults = UserDefaults.standard
+
     
     var isNotFirst: Bool {
         get {

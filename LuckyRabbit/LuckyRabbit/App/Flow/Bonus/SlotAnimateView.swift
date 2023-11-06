@@ -9,6 +9,13 @@ import SnapKit
 class SlotAnimateView: UIView {
     
     let gradientView = GradientView()
+    let arrayOne: [String] =  ["5","5","5","0","0"]
+    let arrayTwo: [String] =  ["10","10","10","0","0"]
+    let arrayThree: [String] =  ["15","15","15","0","0"]
+    var score = 0
+    var total = 0
+    var selectedArray: [String] = []
+    
     
     private(set)  var sectordImage: UIImageView = {
         let imageView = UIImageView()
@@ -18,24 +25,6 @@ class SlotAnimateView: UIView {
     
     var labels: [UILabel] = []
     
-    private(set)  var numberLabel: UILabel = {
-        let label = UILabel()
-        label.text = "5"
-        label.textColor = .white
-        label.font = UIFont(name: "Inter-Black", size: 24)
-        label.textAlignment = .center
-        return label
-    }()
-    
-    
-    private(set)  var numberoneLabel: UILabel = {
-        let label = UILabel()
-        label.text = "10"
-        label.textColor = .white
-        label.font = UIFont(name: "Inter-Black", size: 24)
-        label.textAlignment = .center
-        return label
-    }()
     
     
     override init(frame: CGRect) {
@@ -75,10 +64,21 @@ class SlotAnimateView: UIView {
         }
     }
     
-    
     func createLabels() {
+        let arraysCount: [[String]] = [arrayOne, arrayTwo, arrayThree]
+        selectedArray = arraysCount.randomElement() ?? []
+        switch selectedArray {
+        case arrayOne:
+            total = 5
+        case arrayTwo:
+            total = 10
+        case arrayThree:
+            total = 15
+        default:
+            break
+        }
+        
         for index in 0..<300 {
-            
             let label = UILabel()
             let randomNumber = [0, 5, 10, 15].randomElement() ?? 0
             label.text = String(randomNumber)
@@ -88,11 +88,7 @@ class SlotAnimateView: UIView {
             addSubview(label)
             labels.append(label)
             let y = index / 5
-            if y == 2 {
-                label.textColor = .yellow
-            }
         }
-        
     }
     
     func renderLabels() {
@@ -126,9 +122,22 @@ class SlotAnimateView: UIView {
         animation.repeatCount = 1
         container.layer.add(animation, forKey: "spinAnimation")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+        for index in 10..<13 {
+            self.labels[index].textColor = .yellow
+        }
+        
+        for (index, label) in self.labels.enumerated() {
+            if index / 5 == 2 {
+                label.text = self.selectedArray[self.score]
+                self.score = (self.score + 1) % self.selectedArray.count
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+            
             completion?()
         }
     }
+    
     
 }

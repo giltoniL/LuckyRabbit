@@ -13,7 +13,7 @@ class CoctailView: UIView {
         return imageView
     }()
     
-    private lazy var coctailTableView: UITableView = {
+    private(set) lazy var coctailTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false

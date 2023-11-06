@@ -29,7 +29,6 @@
 		18222F222AF11E4D005C1737 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18222F1F2AF11E4D005C1737 /* Inter-Black.ttf */; };
 		18222F232AF11E4D005C1737 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18222F202AF11E4D005C1737 /* Inter-Regular.ttf */; };
 		18222F242AF11E4D005C1737 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18222F212AF11E4D005C1737 /* Inter-Bold.ttf */; };
-		18222F262AF13067005C1737 /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F252AF13067005C1737 /* GradientLabel.swift */; };
 		18222F282AF132B2005C1737 /* CoctailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F272AF132B2005C1737 /* CoctailCell.swift */; };
 		18222F2A2AF132BE005C1737 /* CoctailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F292AF132BE005C1737 /* CoctailModel.swift */; };
 		18222F2C2AF132D0005C1737 /* dataCoctail in Resources */ = {isa = PBXBuildFile; fileRef = 18222F2B2AF132D0005C1737 /* dataCoctail */; };
@@ -73,7 +72,6 @@
 		18222F1F2AF11E4D005C1737 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
 		18222F202AF11E4D005C1737 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		18222F212AF11E4D005C1737 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
-		18222F252AF13067005C1737 /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		18222F272AF132B2005C1737 /* CoctailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailCell.swift; sourceTree = "<group>"; };
 		18222F292AF132BE005C1737 /* CoctailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailModel.swift; sourceTree = "<group>"; };
 		18222F2B2AF132D0005C1737 /* dataCoctail */ = {isa = PBXFileReference; lastKnownFileType = text; path = dataCoctail; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 			children = (
 				18222F102AF05BA0005C1737 /* InfoVC.swift */,
 				18222F122AF05BAC005C1737 /* infoView.swift */,
-				18222F252AF13067005C1737 /* GradientLabel.swift */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -410,7 +407,6 @@
 				18222F072AF05B7B005C1737 /* CoctailView.swift in Sources */,
 				184ECAC42AF4FAE600AB1D29 /* BonusScreenVC.swift in Sources */,
 				18222F032AF05B69005C1737 /* BonusView.swift in Sources */,
-				18222F262AF13067005C1737 /* GradientLabel.swift in Sources */,
 				18222EFF2AF05A67005C1737 /* RootTabBarController.swift in Sources */,
 				18222F342AF133FE005C1737 /* CoctailDetailsQRView.swift in Sources */,
 				18222EE42AF05740005C1737 /* SceneDelegate.swift in Sources */,

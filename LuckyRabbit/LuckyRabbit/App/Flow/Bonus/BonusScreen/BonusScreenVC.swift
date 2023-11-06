@@ -8,6 +8,8 @@ import SnapKit
 
 class BonusScreenVC: UIViewController {
     
+    var total: Int = 0
+    
     
     var contentView: BonusScreenView {
         view as? BonusScreenView ?? BonusScreenView()
@@ -18,14 +20,15 @@ class BonusScreenVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        contentView.scoreLabel.text = "\(total)"
         contentView.thanksButton.addTarget(self, action: #selector(closeView), for: .touchUpInside)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        UserSettings.shared.balanceCount += contentView.randomNumber
+        UserSettings.shared.balanceCount += total
+        print("\(UserSettings.shared.balanceCount)")
     }
     
     @objc func closeView() {
