@@ -61,35 +61,40 @@ extension BonusVC {
         }
     }
     
-    
     func startCountdownTimer() {
         let calendar = Calendar.current
-        if let lastVisitDate = UserSettings.shared.lastBonusDate {
-            let targetDate = calendar.date(byAdding: .day, value: 1, to: lastVisitDate)
-            let now = Date()
-            if targetDate != nil && now < targetDate! {
-                let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate!)
-                let timeString = String(format: "%02d:%02d:%02d", timeRemaining.hour ?? 0, timeRemaining.minute ?? 0, timeRemaining.second ?? 0)
-                contentView.timecountLabel.text = "\(timeString)"
-                Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
-                    guard let self else { return }
-                    if let targetDate = targetDate {
-                        let now = Date()
-                        if now >= targetDate {
-                            UserDefaults.standard.set(now, forKey: "LastVisitDate")
-                            dismiss(animated: true, completion: nil)
-                            timer.invalidate()
-                        } else {
-                            let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate)
-                            let timeString = String(format: "%02d:%02d:%02d", timeRemaining.hour ?? 0, timeRemaining.minute ?? 0, timeRemaining.second ?? 0)
-                            
-                            contentView.timecountLabel.text = "\(timeString)"
-                        }
-                    }
+        
+        guard let lastVisitDate = UserSettings.shared.lastBonusDate,
+              let targetDate = calendar.date(byAdding: .day, value: 1, to: lastVisitDate) else {
+            return
+        }
+        
+        let now = Date()
+        if now < targetDate {
+            let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate)
+            let timeString = String(format: "%02d:%02d:%02d", timeRemaining.hour ?? 0, timeRemaining.minute ?? 0, timeRemaining.second ?? 0)
+            contentView.timecountLabel.text = "\(timeString)"
+            
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
+                guard let self = self else {
+                    timer.invalidate()
+                    return
                 }
-            } else {
-                UserDefaults.standard.set(now, forKey: "LastVisitDate")
+                
+                let now = Date()
+                if now >= targetDate {
+                    UserDefaults.standard.set(now, forKey: "LastVisitDate")
+                    self.dismiss(animated: true, completion: nil)
+                    timer.invalidate()
+                } else {
+                    let timeRemaining = calendar.dateComponents([.hour, .minute, .second], from: now, to: targetDate)
+                    let timeString = String(format: "%02d:%02d:%02d", timeRemaining.hour ?? 0, timeRemaining.minute ?? 0, timeRemaining.second ?? 0)
+                    self.contentView.timecountLabel.text = "\(timeString)"
+                }
             }
+        } else {
+            UserDefaults.standard.set(now, forKey: "LastVisitDate")
         }
     }
+
 }
