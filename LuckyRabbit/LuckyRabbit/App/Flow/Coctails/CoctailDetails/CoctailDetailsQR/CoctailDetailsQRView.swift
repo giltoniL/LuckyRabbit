@@ -6,8 +6,7 @@ import Foundation
 import UIKit
 
 class CoctailDetailsQRView: UIView {
-    
-    
+
     let backgroundimageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "backBG")
@@ -24,7 +23,6 @@ class CoctailDetailsQRView: UIView {
         let view = UIView()
         return view
     }()
-    
     
     private (set) var coctailConteiner: UIView = {
         let view = UIView()
@@ -88,8 +86,7 @@ class CoctailDetailsQRView: UIView {
     }
     
     private func setupConstraints() {
-        
-        
+    
         backgroundimageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -124,7 +121,5 @@ class CoctailDetailsQRView: UIView {
             make.left.right.bottom.equalToSuperview().inset(20)
             make.height.equalTo(46)
         }
-        
-        
     }
 }

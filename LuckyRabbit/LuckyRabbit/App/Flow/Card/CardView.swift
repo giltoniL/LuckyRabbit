@@ -9,7 +9,6 @@ import SnapKit
 class CardView: UIView {
     
     private let uuid = UUID()
-
     
     private(set)  var backgroundImage: UIImageView = {
         let imageView = UIImageView()
@@ -159,7 +158,7 @@ extension UIView {
         maskLayer.frame = maskLayer.frame.offsetBy(dx: shadowBorder/2, dy: shadowBorder/2)
         
         maskLayer.fillRule = .evenOdd
-                
+        
         let pathMasking = CGMutablePath()
         pathMasking.addPath(UIBezierPath(rect: maskLayer.frame).cgPath)
         var catShiftBorder = CGAffineTransform(translationX: shadowBorder/2, y: shadowBorder/2)

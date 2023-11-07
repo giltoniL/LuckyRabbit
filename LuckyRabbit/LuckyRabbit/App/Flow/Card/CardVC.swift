@@ -11,7 +11,7 @@ import SnapKit
 class CardVC: UIViewController {
     
     
-     var contentView: CardView {
+    var contentView: CardView {
         view as? CardView ?? CardView()
     }
     
@@ -20,10 +20,8 @@ class CardVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         contentView.scoreLabel.text = "\(UserSettings.shared.balanceCount)"

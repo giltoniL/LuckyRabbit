@@ -57,7 +57,6 @@ class CoctailCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
         setupConstraints()
-        
     }
     
     func setupUI(){
@@ -67,7 +66,6 @@ class CoctailCell: UITableViewCell {
         contentView.backgroundColor = .clear
         contentView.layer.cornerRadius = 30
         [coctailImage,titleLabel,scoreImage,scoreLabel].forEach(coctailDetailConteiner.addSubview(_:))
-        
     }
     
     func setupConstraints() {
@@ -75,7 +73,6 @@ class CoctailCell: UITableViewCell {
             make.top.equalToSuperview().offset(20)
             make.left.right.bottom.equalToSuperview()
         }
-        
         
         coctailImage.snp.makeConstraints { make in
             make.left.equalToSuperview()

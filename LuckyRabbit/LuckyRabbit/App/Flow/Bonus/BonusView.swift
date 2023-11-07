@@ -83,11 +83,7 @@ class BonusView: UIView {
     }
     
     private func setupUI() {
-        addSubview(backgroundImage)
-        addSubview(sector)
-        addSubview(spinButton)
-        addSubview(titleLabel)
-        addSubview(timerView)
+        [backgroundImage,sector,spinButton,titleLabel,timerView].forEach(addSubview(_:))
         
         timerView.addSubview(backgroundTimeImage)
         timerView.addSubview(titleTimeLabel)

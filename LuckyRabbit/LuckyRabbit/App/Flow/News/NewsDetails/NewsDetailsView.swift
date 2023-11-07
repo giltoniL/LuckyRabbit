@@ -29,7 +29,7 @@ class NewsDetailView: UIView {
         label.numberOfLines = 0
         return label
     }()
-
+    
     let newsConteinerView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -71,8 +71,6 @@ class NewsDetailView: UIView {
         return imageView
     }()
     
-
-    
     lazy var contentLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -80,7 +78,6 @@ class NewsDetailView: UIView {
         label.numberOfLines = 0
         return label
     }()
-
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -99,7 +96,6 @@ class NewsDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     private func setupUI() {
         [backgroundimageView,newsScrollView,backButton] .forEach(addSubview(_:))
         
@@ -111,7 +107,6 @@ class NewsDetailView: UIView {
         newsDetailConteiner.addSubview(contentLabel)
     }
     
-    
     private func setupConstraints() {
         
         backgroundimageView.snp.makeConstraints { make in
@@ -122,7 +117,6 @@ class NewsDetailView: UIView {
             make.left.equalToSuperview().offset(24)
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(12)
         }
-        
         
         newsScrollView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
@@ -140,8 +134,6 @@ class NewsDetailView: UIView {
             make.left.right.bottom.equalToSuperview()
             make.centerX.equalToSuperview()
         }
-        
-       
 
         newsDetailImage.snp.makeConstraints { make in
             make.top.equalToSuperview()

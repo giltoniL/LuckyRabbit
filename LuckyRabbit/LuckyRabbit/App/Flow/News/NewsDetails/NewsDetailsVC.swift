@@ -26,6 +26,7 @@ class NewsDetailVC: UIViewController {
     override func loadView() {
         view = NewsDetailView()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackButton()
@@ -33,8 +34,6 @@ class NewsDetailVC: UIViewController {
         contentView.newsDetailImage.image = UIImage(named: newsModel.imageNews)
         contentView.contentLabel.text = newsModel.body
     }
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

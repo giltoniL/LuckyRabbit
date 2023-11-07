@@ -34,7 +34,6 @@ class NewsView: UIView {
         super.init(frame: frame)
         setupUI()
         setupConstraints()
-        
     }
     
     required init?(coder: NSCoder) {

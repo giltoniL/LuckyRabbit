@@ -57,7 +57,6 @@ extension CoctailsVC: UITableViewDataSource, UITableViewDelegate {
         return coctailCell
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         

@@ -45,8 +45,8 @@ class SlotAnimateView: UIView {
     }
     
     private func setupUI() {
-        addSubview(sectordImage)
-        addSubview(gradientView)
+        [sectordImage,gradientView].forEach(addSubview(_:))
+        
         gradientView.setupLayer(view: self)
         createLabels()
         

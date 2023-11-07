@@ -7,7 +7,7 @@ import Foundation
 import UIKit
 
 class CoctailDetailsView: UIView {
-
+    
     
     private lazy var backgroundimageView: UIImageView = {
         let imageView = UIImageView()
@@ -45,7 +45,7 @@ class CoctailDetailsView: UIView {
         return view
     }()
     
-  
+    
     
     private (set) var titleLabel: UILabel = {
         let label = UILabel()
@@ -123,10 +123,6 @@ class CoctailDetailsView: UIView {
         return button
     }()
     
-
-    
-
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -144,7 +140,6 @@ class CoctailDetailsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     private func setupUI() {
         [backgroundimageView,coctailDetailConteiner,coctailLabel,backButton] .forEach(addSubview(_:))
         
@@ -159,8 +154,8 @@ class CoctailDetailsView: UIView {
         coctailConteiner.addSubview(volumeScoreLabel)
         coctailConteiner.addSubview(ingredientsLabel)
         coctailConteiner.addSubview(ingredientsScoreLabel)
-        
     }
+    
     private func setupConstraints() {
         
         backgroundimageView.snp.makeConstraints { make in
@@ -182,7 +177,7 @@ class CoctailDetailsView: UIView {
             make.left.right.equalToSuperview().inset(24)
             make.bottom.equalToSuperview().offset(-46)
         }
-
+        
         coctailConteiner.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

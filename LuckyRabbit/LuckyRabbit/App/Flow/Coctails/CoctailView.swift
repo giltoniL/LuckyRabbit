@@ -27,25 +27,20 @@ class CoctailView: UIView {
         super.init(frame: frame)
         setupUI()
         setupConstraints()
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     private func setupUI() {
         [backgroundimageView,coctailTableView].forEach(addSubview(_:))
-        
     }
-    
     
     private func setupConstraints() {
         backgroundimageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
         
         coctailTableView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()

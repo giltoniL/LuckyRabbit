@@ -32,8 +32,8 @@ class Service {
         do {
             let decoder = JSONDecoder()
             let model = try decoder.decode([CoctailModel].self, from: data)
-                successCompletion(model)
-                print(model)
+            successCompletion(model)
+            print(model)
         }catch{
             print("error", error)
             errorComletion(error)
@@ -57,8 +57,8 @@ class Service {
         do {
             let decoder = JSONDecoder()
             let modelNews = try decoder.decode([NewsModel].self, from: data)
-                successCompletion(modelNews)
-                print(modelNews)
+            successCompletion(modelNews)
+            print(modelNews)
         }catch{
             
             print("error", error)

@@ -87,31 +87,28 @@ extension NewsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-            // Создаем UIView для хедера
-            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 60))
-            headerView.backgroundColor = .clear
-            
-            // Создаем UILabel с заголовком "News"
-            let titleLabel = UILabel()
-            titleLabel.text = "News"
-            titleLabel.font = UIFont(name: "Inter-Bold", size: 60)
-            titleLabel.textAlignment = .center
-            titleLabel.textColor = .white
-            titleLabel.frame = headerView.bounds
-            
-            // Добавляем UILabel на UIView
-            headerView.addSubview(titleLabel)
-            
-            return headerView
-        }
-
-        func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 60.0
-        }
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 60))
+        headerView.backgroundColor = .clear
         
-        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            return "News"
-        }
+        let titleLabel = UILabel()
+        titleLabel.text = "News"
+        titleLabel.font = UIFont(name: "Inter-Bold", size: 60)
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = .white
+        titleLabel.frame = headerView.bounds
+        
+        headerView.addSubview(titleLabel)
+        
+        return headerView
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60.0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "News"
+    }
+}
+
 

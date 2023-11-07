@@ -11,7 +11,7 @@ import SnapKit
 class InfoVC: UIViewController {
     
     
-     var contentView: InfoView {
+    var contentView: InfoView {
         view as? InfoView ?? InfoView()
     }
     
@@ -20,8 +20,6 @@ class InfoVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
     }
-
+    
 }

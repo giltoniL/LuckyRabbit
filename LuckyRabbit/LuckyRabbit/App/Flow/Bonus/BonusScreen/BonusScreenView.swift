@@ -8,7 +8,6 @@ import SnapKit
 
 class BonusScreenView: UIView {
     
-    
     private(set)  var backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "backBG")
@@ -32,7 +31,7 @@ class BonusScreenView: UIView {
         return imageView
     }()
     
-     var scoreLabel: UILabel = {
+    var scoreLabel: UILabel = {
         let label = UILabel()
         label.textColor = .yellow
         label.font = UIFont(name: "Inter-Black", size: 60)
@@ -72,12 +71,8 @@ class BonusScreenView: UIView {
     }
     
     private func setupUI() {
-        addSubview(backgroundImage)
-        addSubview(titleLabel)
-        addSubview(iconImage)
-        addSubview(scoreLabel)
-        addSubview(rabbitImage)
-        addSubview(thanksButton)
+        [backgroundImage,titleLabel,iconImage,scoreLabel,rabbitImage,thanksButton].forEach(addSubview(_:))
+        
         
     }
     
@@ -92,15 +87,16 @@ class BonusScreenView: UIView {
             make.left.right.equalToSuperview().inset(73)
         }
         
+        scoreLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.centerX.equalToSuperview()
+        }
+
         iconImage.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(96)
+            make.right.equalTo(scoreLabel.snp.left).offset(-8)
             make.top.equalTo(titleLabel.snp.bottom).offset(32)
         }
         
-        scoreLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(20)
-            make.left.equalTo(iconImage.snp.right).offset(20)
-        }
         
         rabbitImage.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(24)
