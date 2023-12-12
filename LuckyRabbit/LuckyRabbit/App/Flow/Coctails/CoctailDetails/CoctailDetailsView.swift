@@ -128,7 +128,7 @@ class CoctailDetailsView: UIView {
         
         setupUI()
         setupConstraints()
-        
+        adjustFontSizesForScreenSize()
     }
     
     override func layoutSubviews() {
@@ -175,7 +175,7 @@ class CoctailDetailsView: UIView {
         coctailDetailConteiner.snp.makeConstraints { make in
             make.top.equalTo(backButton.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(24)
-            make.bottom.equalToSuperview().offset(-46)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).inset(12)
         }
         
         coctailConteiner.snp.makeConstraints { make in
@@ -225,8 +225,25 @@ class CoctailDetailsView: UIView {
         
         payButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().offset(-36)
+            make.bottom.equalToSuperview()
             make.height.equalTo(payButton.snp.width).multipliedBy(0.16)
+            make.bottom.equalToSuperview().offset(-12)
+        }
+    }
+    
+    private func adjustFontSizesForScreenSize() {
+        let screenSize = UIScreen.main.bounds
+        let smallerScreenHeight: CGFloat = 812
+
+        if screenSize.height < smallerScreenHeight {
+            titleLabel.font = UIFont(name: "Inter-Black", size: 30)
+            volumeLabel.font = UIFont(name: "Inter-Black", size: 14)
+            creditsLabel.font = UIFont(name: "Inter-Black", size: 14)
+            ingredientsLabel.font = UIFont(name: "Inter-Black", size: 14)
+            volumeScoreLabel.font = UIFont(name: "Inter-Black", size: 14)
+            creditsScoreLabel.font = UIFont(name: "Inter-Black", size: 14)
+            ingredientsScoreLabel.font = UIFont(name: "Inter-Black", size: 14)
+            
         }
     }
 }

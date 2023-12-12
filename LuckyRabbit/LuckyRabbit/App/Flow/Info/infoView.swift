@@ -14,9 +14,21 @@ class InfoView: UIView {
         return imageView
     }()
     
+    private(set) lazy var imageConteinerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.65).cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = .init(width: 0, height: 8)
+        view.layer.shadowRadius = 14
+        return view
+    }()
+
     private (set) var iconImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "AppIcon")
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 12
         return imageView
     }()
     
@@ -32,7 +44,7 @@ class InfoView: UIView {
 
     lazy var contentLabel: UILabel = {
         let label = UILabel()
-        label.text = "Lorem ipsum dolor sit amet consectetur. Justo cras accumsan tellus porttitor venenatis venenatis quam. Placerat non at vestibulum vulputate. Scelerisque etiam id feugiat nibh facilisis nibh egestas. Nunc tempor adipiscing eleifend facilisis lectus leo venenatis. Sed euismod sed sodales vel in quam parturient. Consequat sed pretium senectus orci praesent tincidunt hac maecenas sed. Ultrices sed amet penatibus magna sit ut egestas et aenean. Eget accumsan a sapien sit sagittis ultrices in accumsan. Viverra amet volutpat egestas metus.Sit venenatis egestas cras lectus. Gravida ornare sed aliquam pellentesque. Justo neque orci neque mollis est sit varius. Ipsum nulla fringilla habitant phasellus lobortis aliquet faucibus nullam. Purus nulla a dui non lacus eget adipiscing. Sit dolor et varius adipiscing non praesent. Enim tortor vestibulum odio molestie tortor vulputate turpis. Habitant varius vulputate integer integer fermentum lectus arcu odio. Nibh eget pretium vitae sed scelerisque mauris ipsum pharetra sagittis. Placerat erat faucibus nisl nunc ut sed volutpat gravida nibh.leo venenatis. Sed euismod sed sodales vel in quam parturient. Consequat sed pretium senectus orci praesent tincidunt hac maecenas sed. Ultrices sed amet penatibus magna sit ut egestas et aenean. Eget accumsan a sapien sit sagittis ultrices in accumsan. Viverra amet volutpat egestas metus.Sit venenatis egestas cras lectus. Gravida ornare sed aliquam pellentesque. Justo neque orci neque mollis est sit varius. Ipsum nulla fringilla habitant phasellus lobortis aliquet faucibus nullam. Purus nulla a dui non lacus eget adipiscing. Sit dolor et varius adipiscing non praesent. Enim tortor vestibulum odio molestie tortor vulputate turpis. Habitant varius vulputate integer integer fermentum lectus arcu odio. Nibh eget pretium vitae sed scelerisque mauris ipsum pharetra sagittis. Placerat erat faucibus nisl nunc ut sed volutpat gravida nibh.leo venenatis. Sed euismod sed sodales vel in quam parturient. Consequat sed pretium senectus orci praesent tincidunt hac maecenas sed. Ultrices sed amet penatibus magna sit ut egestas et aenean. Eget accumsan a sapien sit sagittis ultrices in accumsan. Viverra amet volutpat egestas metus.Sit venenatis egestas cras lectus. Gravida ornare sed aliquam pellentesque. Justo neque orci neque mollis est sit varius. Ipsum nulla fringilla habitant phasellus lobortis aliquet faucibus nullam. Purus nulla a dui non lacus eget adipiscing. Sit dolor et varius adipiscing non praesent. Enim tortor vestibulum odio molestie tortor vulputate turpis. Habitant varius vulputate integer integer fermentum lectus arcu odio. Nibh eget pretium vitae sed scelerisque mauris ipsum pharetra sagittis. Placerat erat faucibus nisl nunc ut sed volutpat gravida nibh."
+        label.text = "Felix the rabbit lived in the forest, and he couldn’t be happier. His eyes sparkled with wonder, and his joy seemed to envelop the entire forest. Felix created a magical cocktail called the Happy Potion, which brought joy to everyone. All the inhabitants of the forest passed through his smile, and since then, fun has become a part of their daily life.\n\(Settings.appTitle) is an app where the magic of rabbits and delicious cocktails meet!\nScan the code and immediately receive a 5% discount on your order. This is our special offer for you to make every visit to \(Settings.appTitle) even more magical.Let your taste buds take you on an exciting adventure with our unique cocktail combinations\nFind out more about the mysterious rabbits in the News section. Immerse yourself in the exciting adventures of the Twin Rabbits, the Lucky Bunny and the Kung Fu Bunny. We share interesting facts and amazing stories to make your time at Lucky Rabbit not only delicious, but also exciting."
         label.textColor = .white
         label.font = UIFont(name: "Inter-Regular", size: 12)
         label.numberOfLines = 0
@@ -72,9 +84,10 @@ class InfoView: UIView {
         addSubview(backgroundimageView)
         addSubview(infoScrollView)
         infoScrollView.addSubview(infoConteinerView)
-        infoConteinerView.addSubview(iconImage)
+        infoConteinerView.addSubview(imageConteinerView)
         infoConteinerView.addSubview(subTitleLabel)
         infoConteinerView.addSubview(contentLabel)
+        imageConteinerView.addSubview(iconImage)
     }
     
     private func setupConstraints() {
@@ -92,11 +105,16 @@ class InfoView: UIView {
             make.centerX.equalToSuperview()
         }
         
-        iconImage.snp.makeConstraints { make in
+        imageConteinerView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.centerX.equalToSuperview()
             make.size.equalTo(200)
         }
+        
+        iconImage.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
         
         subTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(iconImage.snp.bottom).offset(40)
@@ -104,7 +122,7 @@ class InfoView: UIView {
         }
         
         contentLabel.snp.makeConstraints { make in
-            make.top.equalTo(subTitleLabel.snp.bottom).offset(40)
+            make.top.equalTo(subTitleLabel.snp.bottom).offset(20)
             make.left.right.equalToSuperview().inset(20)
             make.bottom.equalToSuperview().inset(56)
         }

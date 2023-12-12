@@ -11,6 +11,8 @@ class GradientView: UIView {
     
     let gradientLayer = CAGradientLayer()
     
+//    var five =  "_"
+//    cell.text = "_"
     
     override init(frame: CGRect) {
         super.init(frame: frame)
