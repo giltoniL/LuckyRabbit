@@ -16,6 +16,9 @@ workflows:
         XCODE_SCHEME: "LuckyRabbit" # <-- Xcode scheme
        
     scripts:
+      - name: Set up code signing settings on Xcode project
+        script: xcode-project use-profiles
+        
       - name: X
         script: xcodebuild build -project "LuckyRabbit.xcodeproj" -scheme "LuckyRabbit" -configuration Release
       
