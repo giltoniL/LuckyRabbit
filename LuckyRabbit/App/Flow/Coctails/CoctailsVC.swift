@@ -79,7 +79,7 @@ extension CoctailsVC: UITableViewDataSource, UITableViewDelegate {
         headerView.backgroundColor = .clear
         
         let titleLabel = UILabel()
-        titleLabel.text = "Coctails"
+        titleLabel.text = "Cocktails"
         titleLabel.font = UIFont(name: "Inter-Black", size: 60)
         titleLabel.textAlignment = .center
         titleLabel.textColor = .white
@@ -95,7 +95,7 @@ extension CoctailsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Coctails"
+        return "Cocktails"
     }
 }
 

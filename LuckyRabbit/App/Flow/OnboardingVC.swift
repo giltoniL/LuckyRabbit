@@ -25,6 +25,10 @@ class OnboardingVC: UIViewController {
         setupViews()
         setupConstraints()
         startAuth()
+        if !UserSettings.shared.isNotFirst {
+            UserSettings.shared.balanceCount = 100
+            UserSettings.shared.isNotFirst = true
+        }
     }
     
     private func setupViews() {

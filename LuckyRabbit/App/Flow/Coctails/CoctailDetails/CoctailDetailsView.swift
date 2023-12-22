@@ -24,7 +24,7 @@ class CoctailDetailsView: UIView {
     private (set) var coctailLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.text = "Coctail"
+        label.text = "Cocktail"
         label.font = UIFont(name: "Inter-Black", size: 40)
         label.numberOfLines = 0
         return label

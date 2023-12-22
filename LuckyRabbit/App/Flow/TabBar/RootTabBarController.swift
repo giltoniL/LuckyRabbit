@@ -24,7 +24,7 @@ class RootTabBarController: UITabBarController {
         
         let coctailsVC = CoctailsVC()
         let coctailsNavController = UINavigationController(rootViewController: coctailsVC)
-        buildConfig(coctailsNavController, title: "Coctails")
+        buildConfig(coctailsNavController, title: "Cocktails")
         
         let cardVC = CardVC()
         buildConfig(cardVC, title: "Card")
