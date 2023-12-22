@@ -12,12 +12,12 @@ workflows:
         - DEFAULT
       vars:
         BUNDLE_ID: "com.stargems.LuckyRabbitBar" # <-- Bundle id
-        XCODE_WORK: "LuckyRabbit/LuckyRabbit.xcodeproj" # <-- Xcode workspace
+        XCODE_WORK: "LuckyRabbit.xcodeproj" # <-- Xcode workspace
         XCODE_SCHEME: "LuckyRabbit" # <-- Xcode scheme
        
     scripts:
       - name: X
-        script: xcodebuild build -project "LuckyRabbit/LuckyRabbit.xcodeproj" -scheme "LuckyRabbit" -configuration Release
+        script: xcodebuild build -project "LuckyRabbit.xcodeproj" -scheme "LuckyRabbit" -configuration Release
       
       - name: Delete derived data
         script: rm -rf ~/Library/Developer/Xcode/DerivedData
