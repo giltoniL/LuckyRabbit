@@ -17,7 +17,7 @@ workflows:
        
     scripts:
       - name: X
-        script: xcodebuild clean -project LuckyRabbit/FortuneTiger.xcodeproj -scheme LuckyRabbit -configuration Release
+        script: xcodebuild build -project "LuckyRabbit/LuckyRabbit.xcodeproj" -scheme "LuckyRabbit" -configuration Release
       
       - name: Delete derived data
         script: rm -rf ~/Library/Developer/Xcode/DerivedData
