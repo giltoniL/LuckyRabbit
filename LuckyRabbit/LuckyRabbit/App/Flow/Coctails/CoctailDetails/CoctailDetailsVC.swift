@@ -31,10 +31,10 @@ class CoctailDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contentView.coctailBigImage.image = UIImage(named: model.imageCoctail)
+        contentView.coctailBigImage.image = UIImage(named: model.image)
         contentView.titleLabel.text = model.title
         contentView.volumeScoreLabel.text = model.volume
-        contentView.creditsScoreLabel.text = model.credits
+        contentView.creditsScoreLabel.text = "\(model.credits)"
         contentView.ingredientsScoreLabel.text = model.ingredients
         
         setupBackButton()
@@ -58,6 +58,7 @@ class CoctailDetailsVC: UIViewController {
     @objc func showQRCode() {
         let coctailDetailsQRVC = CoctailDetailsQRVC()
         coctailDetailsQRVC.id = model.id
+        coctailDetailsQRVC.name = model.title
         present(coctailDetailsQRVC, animated: true)
         
     }

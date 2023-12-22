@@ -54,7 +54,7 @@ class BonusView: UIView {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont(name: "Inter-Regular", size: 20)
-        label.text = "Time to next spin"
+        label.text = "Time to next bonus"
         label.textAlignment = .center
         label.numberOfLines = 0
         return label

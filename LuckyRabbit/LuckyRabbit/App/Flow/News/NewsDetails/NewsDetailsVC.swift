@@ -31,8 +31,8 @@ class NewsDetailVC: UIViewController {
         super.viewDidLoad()
         setupBackButton()
         contentView.titleNewsLabel.text = newsModel.title
-        contentView.newsDetailImage.image = UIImage(named: newsModel.imageNews)
-        contentView.contentLabel.text = newsModel.body
+        contentView.newsDetailImage.image = UIImage(named: newsModel.imageURL)
+        contentView.contentLabel.text = newsModel.content
     }
     
     override func viewWillAppear(_ animated: Bool) {

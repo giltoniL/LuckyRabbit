@@ -11,6 +11,7 @@ import UIKit
 class CoctailDetailsQRVC: UIViewController {
     
     var id = ""
+    var name = ""
     
     var contentView: CoctailDetailsQRView {
         view as? CoctailDetailsQRView ?? CoctailDetailsQRView()
@@ -29,7 +30,7 @@ class CoctailDetailsQRVC: UIViewController {
         
         contentView.backButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         contentView.hideButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        
+        contentView.coctailLabel.text = name.isEmpty ? "Cocktail" : name
     }
     
     @objc func buttonTapped() {

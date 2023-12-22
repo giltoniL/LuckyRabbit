@@ -68,6 +68,8 @@ class NewsDetailView: UIView {
     var newsDetailImage: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     

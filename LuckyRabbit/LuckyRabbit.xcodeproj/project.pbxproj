@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09EFB7242B35D90C0081F79B /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EFB7232B35D90C0081F79B /* OnboardingVC.swift */; };
+		09EFB7262B35DADD0081F79B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EFB7252B35DADD0081F79B /* NetworkManager.swift */; };
+		09EFB72C2B35E1CD0081F79B /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 09EFB72B2B35E1CD0081F79B /* SVProgressHUD */; };
 		18222EE22AF05740005C1737 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222EE12AF05740005C1737 /* AppDelegate.swift */; };
 		18222EE42AF05740005C1737 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222EE32AF05740005C1737 /* SceneDelegate.swift */; };
 		18222EE92AF05740005C1737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18222EE72AF05740005C1737 /* Main.storyboard */; };
@@ -31,14 +34,12 @@
 		18222F242AF11E4D005C1737 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18222F212AF11E4D005C1737 /* Inter-Bold.ttf */; };
 		18222F282AF132B2005C1737 /* CoctailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F272AF132B2005C1737 /* CoctailCell.swift */; };
 		18222F2A2AF132BE005C1737 /* CoctailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F292AF132BE005C1737 /* CoctailModel.swift */; };
-		18222F2C2AF132D0005C1737 /* dataCoctail in Resources */ = {isa = PBXBuildFile; fileRef = 18222F2B2AF132D0005C1737 /* dataCoctail */; };
 		18222F302AF133DD005C1737 /* CoctailDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F2F2AF133DD005C1737 /* CoctailDetailsVC.swift */; };
 		18222F322AF133ED005C1737 /* CoctailDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F312AF133ED005C1737 /* CoctailDetailsView.swift */; };
 		18222F342AF133FE005C1737 /* CoctailDetailsQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F332AF133FE005C1737 /* CoctailDetailsQRView.swift */; };
 		18222F362AF13407005C1737 /* CoctailDetailsQRVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F352AF13407005C1737 /* CoctailDetailsQRVC.swift */; };
 		18222F382AF1341E005C1737 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F372AF1341E005C1737 /* NewsCell.swift */; };
 		18222F3A2AF13426005C1737 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F392AF13426005C1737 /* NewsModel.swift */; };
-		18222F3C2AF13435005C1737 /* dataNews in Resources */ = {isa = PBXBuildFile; fileRef = 18222F3B2AF13435005C1737 /* dataNews */; };
 		18222F3F2AF13452005C1737 /* NewsDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F3E2AF13452005C1737 /* NewsDetailsVC.swift */; };
 		18222F412AF1345C005C1737 /* NewsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222F402AF1345C005C1737 /* NewsDetailsView.swift */; };
 		184ECAC12AF4F34300AB1D29 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184ECAC02AF4F34300AB1D29 /* UserSettings.swift */; };
@@ -49,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09EFB7232B35D90C0081F79B /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		09EFB7252B35DADD0081F79B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		18222EDE2AF05740005C1737 /* LuckyRabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyRabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18222EE12AF05740005C1737 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18222EE32AF05740005C1737 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,14 +77,12 @@
 		18222F212AF11E4D005C1737 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		18222F272AF132B2005C1737 /* CoctailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailCell.swift; sourceTree = "<group>"; };
 		18222F292AF132BE005C1737 /* CoctailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailModel.swift; sourceTree = "<group>"; };
-		18222F2B2AF132D0005C1737 /* dataCoctail */ = {isa = PBXFileReference; lastKnownFileType = text; path = dataCoctail; sourceTree = "<group>"; };
 		18222F2F2AF133DD005C1737 /* CoctailDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailDetailsVC.swift; sourceTree = "<group>"; };
 		18222F312AF133ED005C1737 /* CoctailDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailDetailsView.swift; sourceTree = "<group>"; };
 		18222F332AF133FE005C1737 /* CoctailDetailsQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailDetailsQRView.swift; sourceTree = "<group>"; };
 		18222F352AF13407005C1737 /* CoctailDetailsQRVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailDetailsQRVC.swift; sourceTree = "<group>"; };
 		18222F372AF1341E005C1737 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		18222F392AF13426005C1737 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
-		18222F3B2AF13435005C1737 /* dataNews */ = {isa = PBXFileReference; lastKnownFileType = text; path = dataNews; sourceTree = "<group>"; };
 		18222F3E2AF13452005C1737 /* NewsDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsVC.swift; sourceTree = "<group>"; };
 		18222F402AF1345C005C1737 /* NewsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsView.swift; sourceTree = "<group>"; };
 		184ECAC02AF4F34300AB1D29 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09EFB72C2B35E1CD0081F79B /* SVProgressHUD in Frameworks */,
 				18222F162AF05C05005C1737 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +138,7 @@
 			children = (
 				18222EE12AF05740005C1737 /* AppDelegate.swift */,
 				18222EE32AF05740005C1737 /* SceneDelegate.swift */,
+				09EFB7252B35DADD0081F79B /* NetworkManager.swift */,
 				18222EF72AF057AC005C1737 /* Flow */,
 			);
 			path = App;
@@ -153,6 +156,7 @@
 		18222EF72AF057AC005C1737 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				09EFB7232B35D90C0081F79B /* OnboardingVC.swift */,
 				18222EF82AF057B2005C1737 /* TabBar */,
 				18222EF92AF059B8005C1737 /* Bonus */,
 				18222EFB2AF059CE005C1737 /* Coctails */,
@@ -201,7 +205,6 @@
 				18222F062AF05B7B005C1737 /* CoctailView.swift */,
 				18222F272AF132B2005C1737 /* CoctailCell.swift */,
 				18222F292AF132BE005C1737 /* CoctailModel.swift */,
-				18222F2B2AF132D0005C1737 /* dataCoctail */,
 				18222F2D2AF133AF005C1737 /* CoctailDetails */,
 			);
 			path = Coctails;
@@ -214,7 +217,6 @@
 				18222F0E2AF05B9A005C1737 /* NewsView.swift */,
 				18222F372AF1341E005C1737 /* NewsCell.swift */,
 				18222F392AF13426005C1737 /* NewsModel.swift */,
-				18222F3B2AF13435005C1737 /* dataNews */,
 				18222F3D2AF1343B005C1737 /* NewsDetails */,
 			);
 			path = News;
@@ -319,6 +321,7 @@
 			name = LuckyRabbit;
 			packageProductDependencies = (
 				18222F152AF05C05005C1737 /* SnapKit */,
+				09EFB72B2B35E1CD0081F79B /* SVProgressHUD */,
 			);
 			productName = LuckyRabbit;
 			productReference = 18222EDE2AF05740005C1737 /* LuckyRabbit.app */;
@@ -350,6 +353,7 @@
 			mainGroup = 18222ED52AF05740005C1737;
 			packageReferences = (
 				18222F142AF05C05005C1737 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				09EFB72A2B35E1CD0081F79B /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
 			);
 			productRefGroup = 18222EDF2AF05740005C1737 /* Products */;
 			projectDirPath = "";
@@ -369,10 +373,8 @@
 				18222EEE2AF05743005C1737 /* LaunchScreen.storyboard in Resources */,
 				18222F232AF11E4D005C1737 /* Inter-Regular.ttf in Resources */,
 				18222EEB2AF05743005C1737 /* Assets.xcassets in Resources */,
-				18222F2C2AF132D0005C1737 /* dataCoctail in Resources */,
 				18222EE92AF05740005C1737 /* Main.storyboard in Resources */,
 				18222F222AF11E4D005C1737 /* Inter-Black.ttf in Resources */,
-				18222F3C2AF13435005C1737 /* dataNews in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +390,7 @@
 				18222F012AF05B61005C1737 /* BonusVC.swift in Sources */,
 				184ECAC62AF4FAF000AB1D29 /* BonusScreenView.swift in Sources */,
 				18222F1A2AF05C98005C1737 /* Service.swift in Sources */,
+				09EFB7242B35D90C0081F79B /* OnboardingVC.swift in Sources */,
 				18222F322AF133ED005C1737 /* CoctailDetailsView.swift in Sources */,
 				184ECAC82AF5301700AB1D29 /* SlotAnimateView.swift in Sources */,
 				18222F382AF1341E005C1737 /* NewsCell.swift in Sources */,
@@ -402,6 +405,7 @@
 				18222F092AF05B83005C1737 /* CardVC.swift in Sources */,
 				18222F132AF05BAC005C1737 /* infoView.swift in Sources */,
 				18222F052AF05B73005C1737 /* CoctailsVC.swift in Sources */,
+				09EFB7262B35DADD0081F79B /* NetworkManager.swift in Sources */,
 				18222F1C2AF05CA4005C1737 /* Settings.swift in Sources */,
 				184ECACA2AF5302700AB1D29 /* GradientView.swift in Sources */,
 				18222F072AF05B7B005C1737 /* CoctailView.swift in Sources */,
@@ -641,6 +645,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		09EFB72A2B35E1CD0081F79B /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 		18222F142AF05C05005C1737 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -652,6 +664,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		09EFB72B2B35E1CD0081F79B /* SVProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 09EFB72A2B35E1CD0081F79B /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
+			productName = SVProgressHUD;
+		};
 		18222F152AF05C05005C1737 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 18222F142AF05C05005C1737 /* XCRemoteSwiftPackageReference "SnapKit" */;

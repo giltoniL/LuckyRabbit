@@ -24,6 +24,8 @@ class NewsCell: UITableViewCell {
     
     let newsImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -37,6 +39,7 @@ class NewsCell: UITableViewCell {
         view.layer.borderWidth = 2
         view.layer.borderColor = UIColor(named: "lightPink")?.cgColor
         view.layer.cornerRadius = 12
+        view.clipsToBounds = true
         return view
     }()
     
@@ -52,7 +55,7 @@ class NewsCell: UITableViewCell {
         contentView.backgroundColor = .clear
         backgroundColor = .clear
         selectionStyle = .none
-        [newsImage,tittleLabel].forEach(newsDetailUseConteiner.addSubview(_:))
+        [newsImage, tittleLabel].forEach(newsDetailUseConteiner.addSubview(_:))
     }
     
     func setupConstraints() {
@@ -87,6 +90,6 @@ class NewsCell: UITableViewCell {
     
     func setupCell(item: NewsModel) {
         tittleLabel.text = item.title
-        newsImage.image = UIImage(named: item.imageNews)
+        newsImage.image = UIImage(named: item.imageURL)
     }
 }

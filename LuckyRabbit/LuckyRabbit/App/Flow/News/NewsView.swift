@@ -19,7 +19,7 @@ class NewsView: UIView {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .clear
         tableView.showsVerticalScrollIndicator = false
-        tableView.contentInset = UIEdgeInsets(top: 56, left: 0, bottom: -56, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: 56, left: 0, bottom: 56, right: 0)
         tableView.register(NewsCell.self, forCellReuseIdentifier: NewsCell.reuseId)
         return tableView
     }()

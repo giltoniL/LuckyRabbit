@@ -16,6 +16,7 @@ class CoctailDetailsQRView: UIView {
     let backButton: UIButton = {
         let button = UIButton()
         button.setBackgroundImage(UIImage(named: "backBtn"), for: .normal)
+        button.isHidden = true
         return button
     }()
     
@@ -36,7 +37,7 @@ class CoctailDetailsQRView: UIView {
     private (set) var coctailLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.text = "Coctails"
+        label.text = "Coctail"
         label.font = UIFont(name: "Inter-Black", size: 40)
         label.numberOfLines = 0
         return label

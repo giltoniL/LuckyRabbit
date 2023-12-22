@@ -5,7 +5,7 @@
 
 import Foundation
 import UIKit
-
+import SVProgressHUD
 
 class CoctailsVC: UIViewController {
     
@@ -28,12 +28,15 @@ class CoctailsVC: UIViewController {
     }
     
     func loadModel() {
-        service.coctailReadData { [weak self] models in
-            guard let self = self else { return }
-            self.items = models
-            self.contentView.coctailTableView.reloadData()
-        } errorComletion: { error in
-            print(#function)
+        Task {
+            do {
+                SVProgressHUD.show()
+                items = try await NetworkManager.shared.getCocktails()
+                await SVProgressHUD.dismiss()
+                contentView.coctailTableView.reloadData()
+            } catch {
+                print("Error: \(error.localizedDescription)")
+            }
         }
     }
 }

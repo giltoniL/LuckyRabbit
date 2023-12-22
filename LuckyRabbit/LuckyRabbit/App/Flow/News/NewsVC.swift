@@ -4,8 +4,8 @@
 
 
 
-import Foundation
 import UIKit
+import SVProgressHUD
 
 class NewsVC: UIViewController {
     
@@ -21,9 +21,9 @@ class NewsVC: UIViewController {
     override func loadView() {
         view = NewsView()
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         contentView.newsTableView.dataSource = self
         contentView.newsTableView.delegate = self
         setupBackButton()
@@ -45,12 +45,16 @@ class NewsVC: UIViewController {
     }
     
     func loadModelNews() {
-        service.newsReadData { [weak self] models in
-            guard let self = self else { return }
-            self.items = models
-            self.contentView.newsTableView.reloadData()
-        } errorComletion: { error in
-            print(#function)
+        Task {
+            do {
+                SVProgressHUD.show()
+                items = try await NetworkManager.shared.getNews()
+                await SVProgressHUD.dismiss()
+                contentView.newsTableView.reloadData()
+            } catch {
+                await SVProgressHUD.dismiss()
+                print("Error: \(error.localizedDescription)")
+            }
         }
     }
 }

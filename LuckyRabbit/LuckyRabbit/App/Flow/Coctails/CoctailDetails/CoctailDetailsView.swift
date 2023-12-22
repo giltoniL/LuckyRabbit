@@ -24,7 +24,7 @@ class CoctailDetailsView: UIView {
     private (set) var coctailLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.text = "Coctails"
+        label.text = "Coctail"
         label.font = UIFont(name: "Inter-Black", size: 40)
         label.numberOfLines = 0
         return label
@@ -64,7 +64,7 @@ class CoctailDetailsView: UIView {
     
     private (set) var volumeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Volume"
+        label.text = "Volume:"
         label.textColor = .white
         label.font = UIFont(name: "Inter-Bold", size: 20)
         label.numberOfLines = 0
@@ -74,7 +74,7 @@ class CoctailDetailsView: UIView {
     private (set) var creditsLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.text = "Credits"
+        label.text = "Credits:"
         label.font = UIFont(name: "Inter-Bold", size: 20)
         label.numberOfLines = 0
         return label
@@ -82,7 +82,7 @@ class CoctailDetailsView: UIView {
     
     private (set) var ingredientsLabel: UILabel = {
         let label = UILabel()
-        label.text = "Ingredients"
+        label.text = "Ingredients:"
         label.textColor = .white
         label.font = UIFont(name: "Inter-Bold", size: 20)
         label.numberOfLines = 0
@@ -219,8 +219,9 @@ class CoctailDetailsView: UIView {
         }
         
         ingredientsScoreLabel.snp.makeConstraints { make in
-            make.left.equalTo(ingredientsLabel.snp.right).offset(12)
-            make.top.equalTo(creditsScoreLabel.snp.bottom).offset(20)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(40)
+            make.top.equalTo(ingredientsLabel.snp.bottom).offset(12)
         }
         
         payButton.snp.makeConstraints { make in

@@ -17,7 +17,10 @@ class CoctailCell: UITableViewCell {
         label.font = UIFont(name: "Inter-Regular", size: 20)
         return label
     }()
-    
+    lazy var crownImage: UIImageView = {
+        let imageView = UIImageView(image: .iconBonus)
+        return imageView
+    }()
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -35,7 +38,7 @@ class CoctailCell: UITableViewCell {
     }()
     
     lazy var scoreImage: UIImageView = {
-        let imageView = UIImageView()
+        let imageView = UIImageView(image: .iconBonus)
         return imageView
     }()
     
@@ -83,7 +86,9 @@ class CoctailCell: UITableViewCell {
         
         scoreImage.snp.makeConstraints { make in
             make.left.equalTo(coctailImage.snp.right).offset(20)
-            make.bottom.equalToSuperview().offset(-24)
+            make.top.equalTo(titleLabel.snp.bottom).offset(12)
+            make.height.equalTo(16)
+            make.width.equalTo(27)
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -94,7 +99,7 @@ class CoctailCell: UITableViewCell {
         
         scoreLabel.snp.makeConstraints { make in
             make.left.equalTo(scoreImage.snp.right).offset(4)
-            make.bottom.equalToSuperview().offset(-24)
+            make.centerY.equalTo(scoreImage.snp.centerY)
         }
     }
     
@@ -112,10 +117,9 @@ class CoctailCell: UITableViewCell {
     }
     
     func setupCell(item: CoctailModel) {
-        scoreLabel.text = item.score
+        scoreLabel.text = "\(item.credits)"
         titleLabel.text = item.title
-        coctailImage.image = UIImage(named: item.imageCoctail)
-        scoreImage.image = UIImage(named: item.imageIcon)
+        coctailImage.image = UIImage(named: item.image)
     }
 }
 

@@ -5,10 +5,16 @@
 
 import Foundation
 
-struct NewsModel: Decodable {
-    
-    let imageNews: String
+struct NewsModel: Codable {
+    let id: String
     let title: String
-    let body: String
+    let content: String
+    let imageURL: String
     
+    enum CodingKeys: String, CodingKey {
+        case id
+        case title
+        case content = "body"
+        case imageURL
+    }
 }

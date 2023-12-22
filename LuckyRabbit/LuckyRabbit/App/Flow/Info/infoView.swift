@@ -33,10 +33,10 @@ class InfoView: UIView {
     }()
     
     private(set) var subTitleLabel: UILabel = {
-        let label = UILabel() // Создайте экземпляр GradientLabel
-        label.text = "\(Settings.appTitle)"
+        let label = UILabel()
+        label.text = Settings.appTitle
         label.textColor = .white
-        label.font = UIFont(name: "Inter-Black", size: 48)
+        label.font = UIFont(name: "Inter-Black", size: 35)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -44,9 +44,9 @@ class InfoView: UIView {
 
     lazy var contentLabel: UILabel = {
         let label = UILabel()
-        label.text = "Felix the rabbit lived in the forest, and he couldn’t be happier. His eyes sparkled with wonder, and his joy seemed to envelop the entire forest. Felix created a magical cocktail called the Happy Potion, which brought joy to everyone. All the inhabitants of the forest passed through his smile, and since then, fun has become a part of their daily life.\n\(Settings.appTitle) is an app where the magic of rabbits and delicious cocktails meet!\nScan the code and immediately receive a 5% discount on your order. This is our special offer for you to make every visit to \(Settings.appTitle) even more magical.Let your taste buds take you on an exciting adventure with our unique cocktail combinations\nFind out more about the mysterious rabbits in the News section. Immerse yourself in the exciting adventures of the Twin Rabbits, the Lucky Bunny and the Kung Fu Bunny. We share interesting facts and amazing stories to make your time at Lucky Rabbit not only delicious, but also exciting."
+        label.text = Settings.infoText
         label.textColor = .white
-        label.font = UIFont(name: "Inter-Regular", size: 12)
+        label.font = UIFont(name: "Inter-Regular", size: 14)
         label.numberOfLines = 0
         return label
     }()
@@ -64,7 +64,7 @@ class InfoView: UIView {
         scrollView.backgroundColor = .clear
         scrollView.isScrollEnabled = true
         scrollView.isDirectionalLockEnabled = true
-        scrollView.contentInset = UIEdgeInsets(top: 56, left: 0, bottom: -56, right: 0)
+        scrollView.contentInset = UIEdgeInsets(top: 56, left: 0, bottom: 56, right: 0)
         return scrollView
     }()
     
