@@ -14,6 +14,12 @@ class InfoView: UIView {
         return imageView
     }()
     
+    let profileBtn: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(.profileInfo, for: .normal)
+        return button
+    }()
+    
     private(set) lazy var imageConteinerView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -83,6 +89,7 @@ class InfoView: UIView {
     private func setupUI() {
         addSubview(backgroundimageView)
         addSubview(infoScrollView)
+        addSubview(profileBtn)
         infoScrollView.addSubview(infoConteinerView)
         infoConteinerView.addSubview(imageConteinerView)
         infoConteinerView.addSubview(subTitleLabel)
@@ -93,6 +100,12 @@ class InfoView: UIView {
     private func setupConstraints() {
         backgroundimageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        profileBtn.snp.makeConstraints { make in
+            make.right.equalToSuperview().offset(-24)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(24)
+            make.size.equalTo(48)
         }
         
         infoScrollView.snp.makeConstraints { make in
@@ -106,7 +119,7 @@ class InfoView: UIView {
         }
         
         imageConteinerView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(48)
             make.centerX.equalToSuperview()
             make.size.equalTo(200)
         }

@@ -36,6 +36,7 @@ class RootTabBarController: UITabBarController {
         let infoVC = InfoVC()
         buildConfig(infoVC, title: "Info")
         
+        
         viewControllers = [bonusVC, coctailsNavController, cardVC, newsNavController, infoVC]
         
     }

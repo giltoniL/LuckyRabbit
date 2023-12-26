@@ -38,5 +38,13 @@ class UserSettings {
         }
     }
     
+    var userName: String? {
+        get {
+            return defaults.string(forKey: "userName")
+        }
+        set {
+            defaults.set(newValue, forKey: "userName")
+        }
+    }
 }
 

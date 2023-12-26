@@ -10,6 +10,8 @@
 		09EFB7242B35D90C0081F79B /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EFB7232B35D90C0081F79B /* OnboardingVC.swift */; };
 		09EFB7262B35DADD0081F79B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EFB7252B35DADD0081F79B /* NetworkManager.swift */; };
 		09EFB72C2B35E1CD0081F79B /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 09EFB72B2B35E1CD0081F79B /* SVProgressHUD */; };
+		181100BE2B3AFF380044D895 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181100BD2B3AFF380044D895 /* ProfileVC.swift */; };
+		181100C02B3AFF440044D895 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181100BF2B3AFF440044D895 /* ProfileView.swift */; };
 		18222EE22AF05740005C1737 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222EE12AF05740005C1737 /* AppDelegate.swift */; };
 		18222EE42AF05740005C1737 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18222EE32AF05740005C1737 /* SceneDelegate.swift */; };
 		18222EE92AF05740005C1737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18222EE72AF05740005C1737 /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 /* Begin PBXFileReference section */
 		09EFB7232B35D90C0081F79B /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		09EFB7252B35DADD0081F79B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		181100BD2B3AFF380044D895 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		181100BF2B3AFF440044D895 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		18222EDE2AF05740005C1737 /* LuckyRabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuckyRabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18222EE12AF05740005C1737 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18222EE32AF05740005C1737 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				18222EFA2AF059BE005C1737 /* Card */,
 				18222EFC2AF059EA005C1737 /* News */,
 				18222EFD2AF059EF005C1737 /* Info */,
+				181100BD2B3AFF380044D895 /* ProfileVC.swift */,
+				181100BF2B3AFF440044D895 /* ProfileView.swift */,
 				18222F182AF05C83005C1737 /* Component */,
 				18222F172AF05C7C005C1737 /* Data */,
 			);
@@ -387,6 +393,7 @@
 			files = (
 				18222F3A2AF13426005C1737 /* NewsModel.swift in Sources */,
 				18222F302AF133DD005C1737 /* CoctailDetailsVC.swift in Sources */,
+				181100C02B3AFF440044D895 /* ProfileView.swift in Sources */,
 				18222F012AF05B61005C1737 /* BonusVC.swift in Sources */,
 				184ECAC62AF4FAF000AB1D29 /* BonusScreenView.swift in Sources */,
 				18222F1A2AF05C98005C1737 /* Service.swift in Sources */,
@@ -394,6 +401,7 @@
 				18222F322AF133ED005C1737 /* CoctailDetailsView.swift in Sources */,
 				184ECAC82AF5301700AB1D29 /* SlotAnimateView.swift in Sources */,
 				18222F382AF1341E005C1737 /* NewsCell.swift in Sources */,
+				181100BE2B3AFF380044D895 /* ProfileVC.swift in Sources */,
 				18222F362AF13407005C1737 /* CoctailDetailsQRVC.swift in Sources */,
 				18222F282AF132B2005C1737 /* CoctailCell.swift in Sources */,
 				18222F0F2AF05B9A005C1737 /* NewsView.swift in Sources */,
@@ -572,6 +580,8 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LuckyRabbit/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses camera to capture photos and videos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -605,6 +615,8 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LuckyRabbit/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses camera to capture photos and videos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

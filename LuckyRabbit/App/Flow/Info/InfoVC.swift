@@ -20,6 +20,18 @@ class InfoVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        tappedButtons()
     }
     
+    
+    private func tappedButtons() {
+        contentView.profileBtn.addTarget(self, action: #selector(buttonProfile), for: .touchUpInside)
+    }
+    
+    @objc func buttonProfile() {
+        let profileVC = ProfileVC()
+        profileVC.modalPresentationStyle = .formSheet
+        present(profileVC, animated: true, completion: nil)
+    }
+
 }
